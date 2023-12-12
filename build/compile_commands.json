@@ -7,9 +7,9 @@
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/CWServer.dir/src/class.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
-  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
-  "output": "CMakeFiles/CWServer.dir/src/class.cpp.o"
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CWServer.dir/src/threadpool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
+  "output": "CMakeFiles/CWServer.dir/src/threadpool.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
@@ -25,8 +25,8 @@
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/CommonCxxTests.dir/src/class.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
-  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
-  "output": "CMakeFiles/CommonCxxTests.dir/src/class.cpp.o"
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
+  "output": "CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o"
 }
 ]

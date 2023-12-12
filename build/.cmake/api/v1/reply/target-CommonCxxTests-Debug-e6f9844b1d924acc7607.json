@@ -106,12 +106,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/class.cpp",
+			"path" : "src/threadpool.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/class.h",
+			"path" : "include/threadpool.h",
 			"sourceGroupIndex" : 1
 		}
 	],

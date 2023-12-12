@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o.d"
-  "CMakeFiles/CommonCxxTests.dir/src/class.cpp.o"
-  "CMakeFiles/CommonCxxTests.dir/src/class.cpp.o.d"
+  "CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o"
+  "CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o.d"
   "CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o.d"
   "CommonCxxTests"

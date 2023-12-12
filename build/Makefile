@@ -584,32 +584,32 @@ exec/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.s
 .PHONY : exec/main.cpp.s
 
-src/class.o: src/class.cpp.o
-.PHONY : src/class.o
+src/threadpool.o: src/threadpool.cpp.o
+.PHONY : src/threadpool.o
 
 # target to build an object file
-src/class.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.o
-.PHONY : src/class.cpp.o
+src/threadpool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o
+.PHONY : src/threadpool.cpp.o
 
-src/class.i: src/class.cpp.i
-.PHONY : src/class.i
+src/threadpool.i: src/threadpool.cpp.i
+.PHONY : src/threadpool.i
 
 # target to preprocess a source file
-src/class.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.i
-.PHONY : src/class.cpp.i
+src/threadpool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.i
+.PHONY : src/threadpool.cpp.i
 
-src/class.s: src/class.cpp.s
-.PHONY : src/class.s
+src/threadpool.s: src/threadpool.cpp.s
+.PHONY : src/threadpool.s
 
 # target to generate assembly for a file
-src/class.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.s
-.PHONY : src/class.cpp.s
+src/threadpool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.s
+.PHONY : src/threadpool.cpp.s
 
 tests/test.o: tests/test.cpp.o
 .PHONY : tests/test.o
@@ -682,9 +682,9 @@ help:
 	@echo "... exec/main.o"
 	@echo "... exec/main.i"
 	@echo "... exec/main.s"
-	@echo "... src/class.o"
-	@echo "... src/class.i"
-	@echo "... src/class.s"
+	@echo "... src/threadpool.o"
+	@echo "... src/threadpool.i"
+	@echo "... src/threadpool.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
