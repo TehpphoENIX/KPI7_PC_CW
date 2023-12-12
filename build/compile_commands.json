@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CWServer.dir/exec/main.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
+  "output": "CMakeFiles/CWServer.dir/exec/main.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CWServer.dir/src/class.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
+  "output": "CMakeFiles/CWServer.dir/src/class.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CommonCxxTests.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CommonCxxTests.cpp",
+  "output": "CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp",
+  "output": "CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/CommonCxxTests.dir/src/class.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/class.cpp",
+  "output": "CMakeFiles/CommonCxxTests.dir/src/class.cpp.o"
+}
+]

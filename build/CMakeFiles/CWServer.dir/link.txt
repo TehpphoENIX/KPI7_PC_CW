@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/CWServer.dir/exec/main.cpp.o CMakeFiles/CWServer.dir/src/class.cpp.o -o CWServer 
