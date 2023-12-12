@@ -9,8 +9,7 @@
 #include <unordered_map>
 #include <string>
 
-#define NUMBER_OF_THREADS 4
-
+template<unsigned int N>
 class ThreadPool
 {
 private:
@@ -28,7 +27,7 @@ private:
 	std::shared_ptr<bool> stop = std::make_shared<bool>(false);
 	const bool exitImmediatlyOnTerminate;
 
-	unsigned int poolStartCountdown = NUMBER_OF_THREADS;
+	unsigned int poolStartCountdown = N;
 	std::shared_ptr<bool> unsafeShutdown = std::make_shared<bool>(false);
 
 	std::priority_queue<unsigned int, std::vector<unsigned int>, std::greater<unsigned int> > priorityQueue;
@@ -64,8 +63,8 @@ public:
 
 	//monitoring
 	unsigned int currentQueueSize();
-	std::unordered_map<unsigned short, ThreadPool::threadStatusEnum> currentThreadStatus();
-	static const char* toString(ThreadPool::threadStatusEnum v)
+	std::unordered_map<unsigned short, ThreadPool<N>::threadStatusEnum> currentThreadStatus();
+	static const char* toString(ThreadPool<N>::threadStatusEnum v)
 	{
 		switch (v)
 		{
@@ -79,7 +78,7 @@ public:
 	}
 
 	//statistics
-	unsigned int numberOfThreds() { return NUMBER_OF_THREADS; }
+	unsigned int numberOfThreds() { return N; }
 	double avgWaitTime();
 	void avgWaitTimeReset();
 	double avgQueueSize();

@@ -3,7 +3,8 @@
 
 #define LOCK_MUTEX std::unique_lock<std::mutex> lock(*rwLock)
 
-void ThreadPool::runner(unsigned short id) {
+template <unsigned int N>
+void ThreadPool<N>::runner(unsigned short id) {
 	std::shared_ptr<std::mutex> mutex(rwLock);
 	std::shared_ptr<bool> localStop(stop);
 	std::shared_ptr<bool> deadHost(unsafeShutdown);
@@ -55,7 +56,8 @@ void ThreadPool::runner(unsigned short id) {
 	}
 }
 
-void ThreadPool::updateAvgQueueSize()
+template <unsigned int N>
+void ThreadPool<N>::updateAvgQueueSize()
 {
 	//get vars
 	auto now = std::chrono::high_resolution_clock::now();
@@ -68,18 +70,20 @@ void ThreadPool::updateAvgQueueSize()
 	avgQueueSizeDivider += time;
 }
 
-ThreadPool::ThreadPool(bool ExitImmediatlyOnTerminate) :
+template <unsigned int N>
+ThreadPool<N>::ThreadPool(bool ExitImmediatlyOnTerminate) :
 	exitImmediatlyOnTerminate(ExitImmediatlyOnTerminate)
 {
-	for (unsigned int i = 0; i < NUMBER_OF_THREADS; i++)
+	for (unsigned int i = 0; i < N; i++)
 	{
-		threads.emplace_back(std::thread(&ThreadPool::runner, this, i));
+		threads.emplace_back(std::thread(&ThreadPool<N>::runner, this, i));
 	}
 	LOCK_MUTEX;
 	condition.wait(lock, [this] {return poolStartCountdown == 0; });
 }
 
-ThreadPool::~ThreadPool()
+template <unsigned int N>
+ThreadPool<N>::~ThreadPool()
 {
 	if (exitImmediatlyOnTerminate)
 		terminateIm();
@@ -87,7 +91,8 @@ ThreadPool::~ThreadPool()
 		terminate();
 }
 
-void ThreadPool::terminate()
+template <unsigned int N>
+void ThreadPool<N>::terminate()
 {
 	{
 		LOCK_MUTEX;
@@ -105,7 +110,8 @@ void ThreadPool::terminate()
 	updateAvgQueueSize();
 }
 
-void ThreadPool::terminateIm()
+template <unsigned int N>
+void ThreadPool<N>::terminateIm()
 {
 	{
 		LOCK_MUTEX;
@@ -123,13 +129,15 @@ void ThreadPool::terminateIm()
 	updateAvgQueueSize();
 }
 
-void ThreadPool::pause()
+template <unsigned int N>
+void ThreadPool<N>::pause()
 {
 	LOCK_MUTEX;
 	running = false;
 }
 
-void ThreadPool::unpause()
+template <unsigned int N>
+void ThreadPool<N>::unpause()
 {
 	LOCK_MUTEX;
 	running = true;
@@ -137,14 +145,16 @@ void ThreadPool::unpause()
 	condition.notify_all();
 }
 
-void ThreadPool::pauseToggle()
+template <unsigned int N>
+void ThreadPool<N>::pauseToggle()
 {
 	LOCK_MUTEX;
 	running = !running;
 	if (running) condition.notify_all();
 }
 
-unsigned int ThreadPool::addTask(unsigned int task)
+template <unsigned int N>
+unsigned int ThreadPool<N>::addTask(unsigned int task)
 {
 	LOCK_MUTEX;
 	updateAvgQueueSize();
@@ -154,7 +164,8 @@ unsigned int ThreadPool::addTask(unsigned int task)
 	return out;
 }
 
-unsigned int ThreadPool::removeTask()
+template <unsigned int N>
+unsigned int ThreadPool<N>::removeTask()
 {
 	LOCK_MUTEX;
 	updateAvgQueueSize();
@@ -164,45 +175,52 @@ unsigned int ThreadPool::removeTask()
 }
 
 //monitoring
-unsigned int ThreadPool::currentQueueSize()
+template <unsigned int N>
+unsigned int ThreadPool<N>::currentQueueSize()
 {
 	LOCK_MUTEX;
 	return priorityQueue.size();
 }
 
-std::unordered_map<unsigned short, ThreadPool::threadStatusEnum> ThreadPool::currentThreadStatus()
+template <unsigned int N>
+std::unordered_map<unsigned short, typename ThreadPool<N>::threadStatusEnum> ThreadPool<N>::currentThreadStatus()
 {
 	LOCK_MUTEX;
 	return threadStatusMap;
 }
 
 //statistics:
-double ThreadPool::avgWaitTime()
+template <unsigned int N>
+double ThreadPool<N>::avgWaitTime()
 {
 	LOCK_MUTEX;
 	return avgWaitTimeVar / avgWaitTimeDivider;
 }
 
-void ThreadPool::avgWaitTimeReset()
+template <unsigned int N>
+void ThreadPool<N>::avgWaitTimeReset()
 {
 	LOCK_MUTEX;
 	avgWaitTimeVar = 0.0;
 	avgWaitTimeDivider = 0;
 }
 
-double ThreadPool::avgQueueSize()
+template <unsigned int N>
+double ThreadPool<N>::avgQueueSize()
 {
 	LOCK_MUTEX;
 	return avgQueueSizeVar/avgQueueSizeDivider;
 }
 
-double ThreadPool::avgTaskCompletionTime()
+template <unsigned int N>
+double ThreadPool<N>::avgTaskCompletionTime()
 {
 	LOCK_MUTEX;
 	return avgTaskCompletionTimeVar / avgTaskCompletionTimeDivider;
 }
 
-void ThreadPool::avgTaskCompletionTimeReset()
+template <unsigned int N>
+void ThreadPool<N>::avgTaskCompletionTimeReset()
 {
 	LOCK_MUTEX;
 	avgTaskCompletionTimeVar = 0.0;
