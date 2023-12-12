@@ -82,6 +82,7 @@ public:
 	double avgWaitTime();
 	void avgWaitTimeReset();
 	double avgQueueSize();
+	void avgQueueSizeReset();
 	double avgTaskCompletionTime();
 	void avgTaskCompletionTimeReset();
 

@@ -2,6 +2,7 @@
 #include <chrono>
 
 #define LOCK_MUTEX std::unique_lock<std::mutex> lock(*rwLock)
+#define TIME_NOW std::chrono::high_resolution_clock::now()
 
 template <unsigned int N>
 void ThreadPool<N>::runner(unsigned short id) {
@@ -19,11 +20,11 @@ void ThreadPool<N>::runner(unsigned short id) {
 		unsigned int task;
 		{
 			std::unique_lock<std::mutex> lock(*mutex);
-			auto startTime = std::chrono::high_resolution_clock::now();
+			auto startTime = TIME_NOW;
 			if (!*localStop && !running) threadStatusMap[id] = paused;
 			if (!*localStop && priorityQueue.empty()) threadStatusMap[id] = waiting;
 			condition.wait(lock, [=] {return *localStop || (running && !priorityQueue.empty()); });
-			auto endTime = std::chrono::high_resolution_clock::now();
+			auto endTime = TIME_NOW;
 			if (*localStop) 
 			{
 				if (!*deadHost)
@@ -42,9 +43,9 @@ void ThreadPool<N>::runner(unsigned short id) {
 			priorityQueue.pop();
 			threadStatusMap[id] = working;
 		}
-		auto startTime = std::chrono::high_resolution_clock::now();
+		auto startTime = TIME_NOW;
 		std::this_thread::sleep_for(std::chrono::seconds(task));
-		auto endTime = std::chrono::high_resolution_clock::now();
+		auto endTime = TIME_NOW;
 		{
 			std::unique_lock<std::mutex> lock(*mutex);
 			if (!*localStop || !*deadHost)
@@ -60,7 +61,7 @@ template <unsigned int N>
 void ThreadPool<N>::updateAvgQueueSize()
 {
 	//get vars
-	auto now = std::chrono::high_resolution_clock::now();
+	auto now = TIME_NOW;
 	double queueSize = priorityQueue.size();
 	double time = std::chrono::duration_cast<std::chrono::milliseconds>(now - timeFromLastUpdate).count();
 	
@@ -210,6 +211,14 @@ double ThreadPool<N>::avgQueueSize()
 {
 	LOCK_MUTEX;
 	return avgQueueSizeVar/avgQueueSizeDivider;
+}
+
+template<unsigned int N>
+void ThreadPool<N>::avgQueueSizeReset()
+{
+	LOCK_MUTEX;
+	avgQueueSizeVar = 0.0;
+	avgQueueSizeDivider = 0.0;
 }
 
 template <unsigned int N>
