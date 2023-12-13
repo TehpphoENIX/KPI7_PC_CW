@@ -13,7 +13,6 @@
 
 typedef std::pair<int, std::function<const int()>> Task;  
 
-template<unsigned int N>
 class ThreadPool
 {
 private:
@@ -26,6 +25,7 @@ private:
 		paused
 	};
 private:
+	const unsigned int N;
 	std::vector<std::thread> threads;
 	bool running = true;
 	std::shared_ptr<bool> stop = std::make_shared<bool>(false);
@@ -50,7 +50,7 @@ private:
 	std::chrono::system_clock::time_point timeFromLastUpdate = std::chrono::high_resolution_clock::now();
 	std::unordered_map<unsigned short, threadStatusEnum> threadStatusMap;
 public:
-	ThreadPool(bool exitImmediatlyOnTerminate = false);
+	ThreadPool(unsigned int N, bool exitImmediatlyOnTerminate = false);
 	ThreadPool(const ThreadPool&) = delete;
 	ThreadPool(ThreadPool&& other) = delete;
 	ThreadPool& operator=(ThreadPool& rhs) = delete;
@@ -68,8 +68,8 @@ public:
 
 	//monitoring
 	unsigned int currentQueueSize();
-	std::unordered_map<unsigned short, ThreadPool<N>::threadStatusEnum> currentThreadStatus();
-	static const char* toString(ThreadPool<N>::threadStatusEnum v)
+	std::unordered_map<unsigned short, ThreadPool::threadStatusEnum> currentThreadStatus();
+	static const char* toString(ThreadPool::threadStatusEnum v)
 	{
 		switch (v)
 		{

@@ -533,32 +533,8 @@ CommonCxxTests: cmake_check_build_system
 
 # fast build rule for target.
 CommonCxxTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/build
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/build
 .PHONY : CommonCxxTests/fast
-
-CommonCxxTests.o: CommonCxxTests.cpp.o
-.PHONY : CommonCxxTests.o
-
-# target to build an object file
-CommonCxxTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o
-.PHONY : CommonCxxTests.cpp.o
-
-CommonCxxTests.i: CommonCxxTests.cpp.i
-.PHONY : CommonCxxTests.i
-
-# target to preprocess a source file
-CommonCxxTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.i
-.PHONY : CommonCxxTests.cpp.i
-
-CommonCxxTests.s: CommonCxxTests.cpp.s
-.PHONY : CommonCxxTests.s
-
-# target to generate assembly for a file
-CommonCxxTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s
-.PHONY : CommonCxxTests.cpp.s
 
 exec/main.o: exec/main.cpp.o
 .PHONY : exec/main.o
@@ -590,7 +566,6 @@ src/thread_pool.o: src/thread_pool.cpp.o
 # target to build an object file
 src/thread_pool.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o
 .PHONY : src/thread_pool.cpp.o
 
 src/thread_pool.i: src/thread_pool.cpp.i
@@ -599,7 +574,6 @@ src/thread_pool.i: src/thread_pool.cpp.i
 # target to preprocess a source file
 src/thread_pool.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.i
 .PHONY : src/thread_pool.cpp.i
 
 src/thread_pool.s: src/thread_pool.cpp.s
@@ -608,32 +582,7 @@ src/thread_pool.s: src/thread_pool.cpp.s
 # target to generate assembly for a file
 src/thread_pool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.s
 .PHONY : src/thread_pool.cpp.s
-
-tests/thread_pool_completion_test.o: tests/thread_pool_completion_test.cpp.o
-.PHONY : tests/thread_pool_completion_test.o
-
-# target to build an object file
-tests/thread_pool_completion_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o
-.PHONY : tests/thread_pool_completion_test.cpp.o
-
-tests/thread_pool_completion_test.i: tests/thread_pool_completion_test.cpp.i
-.PHONY : tests/thread_pool_completion_test.i
-
-# target to preprocess a source file
-tests/thread_pool_completion_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.i
-.PHONY : tests/thread_pool_completion_test.cpp.i
-
-tests/thread_pool_completion_test.s: tests/thread_pool_completion_test.cpp.s
-.PHONY : tests/thread_pool_completion_test.s
-
-# target to generate assembly for a file
-tests/thread_pool_completion_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.s
-.PHONY : tests/thread_pool_completion_test.cpp.s
 
 # Help Target
 help:
@@ -676,18 +625,12 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... CWServer"
 	@echo "... CommonCxxTests"
-	@echo "... CommonCxxTests.o"
-	@echo "... CommonCxxTests.i"
-	@echo "... CommonCxxTests.s"
 	@echo "... exec/main.o"
 	@echo "... exec/main.i"
 	@echo "... exec/main.s"
 	@echo "... src/thread_pool.o"
 	@echo "... src/thread_pool.i"
 	@echo "... src/thread_pool.s"
-	@echo "... tests/thread_pool_completion_test.o"
-	@echo "... tests/thread_pool_completion_test.i"
-	@echo "... tests/thread_pool_completion_test.s"
 .PHONY : help
 
 

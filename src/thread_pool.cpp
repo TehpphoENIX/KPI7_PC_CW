@@ -4,16 +4,19 @@
 #define LOCK_MUTEX std::unique_lock<std::mutex> lock(*rwLock)
 #define TIME_NOW std::chrono::high_resolution_clock::now()
 
-template <unsigned int N>
-void ThreadPool<N>::runner(unsigned short id) {
-	std::shared_ptr<std::mutex> mutex(rwLock);
-	std::shared_ptr<bool> localStop(stop);
-	std::shared_ptr<bool> deadHost(unsafeShutdown);
-	threadStatusMap.insert({ id, started});
+
+void ThreadPool::runner(unsigned short id) {
+	std::shared_ptr<std::mutex> mutex;
+	std::shared_ptr<bool> localStop;
+	std::shared_ptr<bool> deadHost;
 	{
-		std::unique_lock<std::mutex> lock(*mutex);
+		std::unique_lock<std::mutex> lock(*rwLock);
+		mutex = rwLock;
+		localStop = stop;
+		deadHost = unsafeShutdown;
+		threadStatusMap.insert({ id, started});
 		poolStartCountdown--;
-		if (poolStartCountdown == 0) condition.notify_one();
+		if (poolStartCountdown == 0) condition.notify_all();
 	}
 	while (true)
 	{
@@ -57,8 +60,8 @@ void ThreadPool<N>::runner(unsigned short id) {
 	}
 }
 
-template <unsigned int N>
-void ThreadPool<N>::updateAvgQueueSize()
+
+void ThreadPool::updateAvgQueueSize()
 {
 	//get vars
 	auto now = TIME_NOW;
@@ -71,20 +74,20 @@ void ThreadPool<N>::updateAvgQueueSize()
 	avgQueueSizeDivider += time;
 }
 
-template <unsigned int N>
-ThreadPool<N>::ThreadPool(bool ExitImmediatlyOnTerminate) :
-	exitImmediatlyOnTerminate(ExitImmediatlyOnTerminate)
+
+ThreadPool::ThreadPool(unsigned int N, bool ExitImmediatlyOnTerminate) :
+	N(N), exitImmediatlyOnTerminate(ExitImmediatlyOnTerminate)
 {
 	for (unsigned int i = 0; i < N; i++)
 	{
-		threads.emplace_back(std::thread(&ThreadPool<N>::runner, this, i));
+		threads.emplace_back(std::thread(&ThreadPool::runner, this, i));
 	}
 	LOCK_MUTEX;
-	condition.wait(lock, [this] {return poolStartCountdown == 0; });
+	condition.wait(lock, [this] {return this->poolStartCountdown == 0; });
 }
 
-template <unsigned int N>
-ThreadPool<N>::~ThreadPool()
+
+ThreadPool::~ThreadPool()
 {
 	if (exitImmediatlyOnTerminate)
 		terminateIm();
@@ -92,8 +95,8 @@ ThreadPool<N>::~ThreadPool()
 		terminate();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::terminate()
+
+void ThreadPool::terminate()
 {
 	{
 		LOCK_MUTEX;
@@ -111,8 +114,8 @@ void ThreadPool<N>::terminate()
 	updateAvgQueueSize();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::terminateIm()
+
+void ThreadPool::terminateIm()
 {
 	{
 		LOCK_MUTEX;
@@ -130,15 +133,15 @@ void ThreadPool<N>::terminateIm()
 	updateAvgQueueSize();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::pause()
+
+void ThreadPool::pause()
 {
 	LOCK_MUTEX;
 	running = false;
 }
 
-template <unsigned int N>
-void ThreadPool<N>::unpause()
+
+void ThreadPool::unpause()
 {
 	LOCK_MUTEX;
 	running = true;
@@ -146,16 +149,16 @@ void ThreadPool<N>::unpause()
 	condition.notify_all();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::pauseToggle()
+
+void ThreadPool::pauseToggle()
 {
 	LOCK_MUTEX;
 	running = !running;
 	if (running) condition.notify_all();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::addTask(Task task)
+
+void ThreadPool::addTask(Task task)
 {
 	LOCK_MUTEX;
 	updateAvgQueueSize();
@@ -164,8 +167,8 @@ void ThreadPool<N>::addTask(Task task)
 	if (out == 1) condition.notify_one();
 }
 
-template <unsigned int N>
-void ThreadPool<N>::removeTask()
+
+void ThreadPool::removeTask()
 {
 	LOCK_MUTEX;
 	updateAvgQueueSize();
@@ -173,60 +176,59 @@ void ThreadPool<N>::removeTask()
 }
 
 //monitoring
-template <unsigned int N>
-unsigned int ThreadPool<N>::currentQueueSize()
+
+unsigned int ThreadPool::currentQueueSize()
 {
 	LOCK_MUTEX;
 	return priorityQueue.size();
 }
 
-template <unsigned int N>
-std::unordered_map<unsigned short, typename ThreadPool<N>::threadStatusEnum> ThreadPool<N>::currentThreadStatus()
+
+std::unordered_map<unsigned short, typename ThreadPool::threadStatusEnum> ThreadPool::currentThreadStatus()
 {
 	LOCK_MUTEX;
 	return threadStatusMap;
 }
 
 //statistics:
-template <unsigned int N>
-double ThreadPool<N>::avgWaitTime()
+
+double ThreadPool::avgWaitTime()
 {
 	LOCK_MUTEX;
 	return avgWaitTimeVar / avgWaitTimeDivider;
 }
 
-template <unsigned int N>
-void ThreadPool<N>::avgWaitTimeReset()
+
+void ThreadPool::avgWaitTimeReset()
 {
 	LOCK_MUTEX;
 	avgWaitTimeVar = 0.0;
 	avgWaitTimeDivider = 0;
 }
 
-template <unsigned int N>
-double ThreadPool<N>::avgQueueSize()
+
+double ThreadPool::avgQueueSize()
 {
 	LOCK_MUTEX;
 	return avgQueueSizeVar/avgQueueSizeDivider;
 }
 
-template<unsigned int N>
-void ThreadPool<N>::avgQueueSizeReset()
+void ThreadPool::avgQueueSizeReset()
 {
 	LOCK_MUTEX;
 	avgQueueSizeVar = 0.0;
 	avgQueueSizeDivider = 0.0;
 }
 
-template <unsigned int N>
-double ThreadPool<N>::avgTaskCompletionTime()
+
+double ThreadPool::avgTaskCompletionTime()
 {
 	LOCK_MUTEX;
 	return avgTaskCompletionTimeVar / avgTaskCompletionTimeDivider;
 }
 
-template <unsigned int N>
-void ThreadPool<N>::avgTaskCompletionTimeReset()
+
+void ThreadPool::avgTaskCompletionTimeReset()
 {
 	LOCK_MUTEX;
 	avgTaskCompletionTimeVar = 0.0;

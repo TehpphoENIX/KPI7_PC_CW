@@ -27,9 +27,14 @@
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/ContinuousMemCheck.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/ContinuousSubmit.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/CWServer.dir
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/CommonCxxTests.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/package.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/package_source.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/test.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/edit_cache.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/rebuild_cache.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/CommonCxxTests.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/package.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/package_source.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/test.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/edit_cache.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CMakeFiles/rebuild_cache.dir
