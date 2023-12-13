@@ -83,46 +83,46 @@ CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CommonCxxTests.cpp -o CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s
 
-CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o: CMakeFiles/CommonCxxTests.dir/flags.make
-CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp
-CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o: CMakeFiles/CommonCxxTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o -MF CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o.d -o CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp
+CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o: CMakeFiles/CommonCxxTests.dir/flags.make
+CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp
+CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o: CMakeFiles/CommonCxxTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o -MF CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o.d -o CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp
 
-CMakeFiles/CommonCxxTests.dir/tests/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CommonCxxTests.dir/tests/test.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp > CMakeFiles/CommonCxxTests.dir/tests/test.cpp.i
+CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp > CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.i
 
-CMakeFiles/CommonCxxTests.dir/tests/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CommonCxxTests.dir/tests/test.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/test.cpp -o CMakeFiles/CommonCxxTests.dir/tests/test.cpp.s
+CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp -o CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.s
 
-CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o: CMakeFiles/CommonCxxTests.dir/flags.make
-CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp
-CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o: CMakeFiles/CommonCxxTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o -MF CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o.d -o CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp
+CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o: CMakeFiles/CommonCxxTests.dir/flags.make
+CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp
+CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o: CMakeFiles/CommonCxxTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o -MF CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o.d -o CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp
 
-CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp > CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.i
+CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp > CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.i
 
-CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp -o CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.s
+CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp -o CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.s
 
 # Object files for target CommonCxxTests
 CommonCxxTests_OBJECTS = \
 "CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o" \
-"CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o" \
-"CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o"
+"CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o" \
+"CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o"
 
 # External object files for target CommonCxxTests
 CommonCxxTests_EXTERNAL_OBJECTS =
 
 CommonCxxTests: CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o
-CommonCxxTests: CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o
-CommonCxxTests: CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o
+CommonCxxTests: CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o
+CommonCxxTests: CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o
 CommonCxxTests: CMakeFiles/CommonCxxTests.dir/build.make
 CommonCxxTests: CMakeFiles/CommonCxxTests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CommonCxxTests"

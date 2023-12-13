@@ -11,7 +11,7 @@
 
 
 /* Forward declare test functions. */
-int tests_test(int, char*[]);
+int tests_thread_pool_completion_test(int, char*[]);
 
 
 #ifdef __cplusplus
@@ -45,8 +45,8 @@ typedef struct /* NOLINT */
 
 CM_LOCAL const functionMapEntry cmakeGeneratedFunctionMapEntries[] = {
     {
-    "tests/test",
-    tests_test
+    "tests/thread_pool_completion_test",
+    tests_thread_pool_completion_test
   },
 
   { CM_NULL, CM_NULL } /* NOLINT */

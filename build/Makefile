@@ -584,56 +584,56 @@ exec/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.s
 .PHONY : exec/main.cpp.s
 
-src/threadpool.o: src/threadpool.cpp.o
-.PHONY : src/threadpool.o
+src/thread_pool.o: src/thread_pool.cpp.o
+.PHONY : src/thread_pool.o
 
 # target to build an object file
-src/threadpool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.o
-.PHONY : src/threadpool.cpp.o
+src/thread_pool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.o
+.PHONY : src/thread_pool.cpp.o
 
-src/threadpool.i: src/threadpool.cpp.i
-.PHONY : src/threadpool.i
+src/thread_pool.i: src/thread_pool.cpp.i
+.PHONY : src/thread_pool.i
 
 # target to preprocess a source file
-src/threadpool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.i
-.PHONY : src/threadpool.cpp.i
+src/thread_pool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.i
+.PHONY : src/thread_pool.cpp.i
 
-src/threadpool.s: src/threadpool.cpp.s
-.PHONY : src/threadpool.s
+src/thread_pool.s: src/thread_pool.cpp.s
+.PHONY : src/thread_pool.s
 
 # target to generate assembly for a file
-src/threadpool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/threadpool.cpp.s
-.PHONY : src/threadpool.cpp.s
+src/thread_pool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/thread_pool.cpp.s
+.PHONY : src/thread_pool.cpp.s
 
-tests/test.o: tests/test.cpp.o
-.PHONY : tests/test.o
+tests/thread_pool_completion_test.o: tests/thread_pool_completion_test.cpp.o
+.PHONY : tests/thread_pool_completion_test.o
 
 # target to build an object file
-tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o
-.PHONY : tests/test.cpp.o
+tests/thread_pool_completion_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.o
+.PHONY : tests/thread_pool_completion_test.cpp.o
 
-tests/test.i: tests/test.cpp.i
-.PHONY : tests/test.i
+tests/thread_pool_completion_test.i: tests/thread_pool_completion_test.cpp.i
+.PHONY : tests/thread_pool_completion_test.i
 
 # target to preprocess a source file
-tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.i
-.PHONY : tests/test.cpp.i
+tests/thread_pool_completion_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.i
+.PHONY : tests/thread_pool_completion_test.cpp.i
 
-tests/test.s: tests/test.cpp.s
-.PHONY : tests/test.s
+tests/thread_pool_completion_test.s: tests/thread_pool_completion_test.cpp.s
+.PHONY : tests/thread_pool_completion_test.s
 
 # target to generate assembly for a file
-tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.s
-.PHONY : tests/test.cpp.s
+tests/thread_pool_completion_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/thread_pool_completion_test.cpp.s
+.PHONY : tests/thread_pool_completion_test.cpp.s
 
 # Help Target
 help:
@@ -682,12 +682,12 @@ help:
 	@echo "... exec/main.o"
 	@echo "... exec/main.i"
 	@echo "... exec/main.s"
-	@echo "... src/threadpool.o"
-	@echo "... src/threadpool.i"
-	@echo "... src/threadpool.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
+	@echo "... src/thread_pool.o"
+	@echo "... src/thread_pool.i"
+	@echo "... src/thread_pool.s"
+	@echo "... tests/thread_pool_completion_test.o"
+	@echo "... tests/thread_pool_completion_test.i"
+	@echo "... tests/thread_pool_completion_test.s"
 .PHONY : help
 
 

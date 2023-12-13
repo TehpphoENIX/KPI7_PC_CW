@@ -320,15 +320,6 @@ MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 //Name of the computer/site where compile is being run
 SITE:STRING=nobara-pc
 
-//Value Computed by CMake
-Test_BINARY_DIR:STATIC=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build
-
-//Value Computed by CMake
-Test_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Test_SOURCE_DIR:STATIC=/home/teh-phoenix/Documents/7/KPI7_PC_CW
-
 
 ########################
 # INTERNAL cache entries
