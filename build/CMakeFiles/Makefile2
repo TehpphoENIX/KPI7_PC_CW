@@ -854,12 +854,12 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/CWServer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=1,2,3 "Built target CWServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=1,2,3,4 "Built target CWServer"
 .PHONY : CMakeFiles/CWServer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CWServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CWServer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 0
 .PHONY : CMakeFiles/CWServer.dir/rule
@@ -880,12 +880,12 @@ CMakeFiles/CWServer.dir/clean:
 tests/CMakeFiles/CommonCxxTests.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=4,5,6,7 "Built target CommonCxxTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=5,6,7,8,9 "Built target CommonCxxTests"
 .PHONY : tests/CMakeFiles/CommonCxxTests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/CommonCxxTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/CommonCxxTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/CommonCxxTests.dir/rule

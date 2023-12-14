@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/CWServer.dir/exec/main.cpp.o CMakeFiles/CWServer.dir/src/thread_pool.cpp.o -o CWServer 
+/usr/bin/g++ -g CMakeFiles/CWServer.dir/exec/main.cpp.o CMakeFiles/CWServer.dir/src/inverted_index.cpp.o CMakeFiles/CWServer.dir/src/thread_pool.cpp.o -o CWServer 

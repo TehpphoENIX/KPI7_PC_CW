@@ -184,6 +184,30 @@ CommonCxxTests.cpp.s:
 	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s
 .PHONY : CommonCxxTests.cpp.s
 
+__/src/inverted_index.o: __/src/inverted_index.cpp.o
+.PHONY : __/src/inverted_index.o
+
+# target to build an object file
+__/src/inverted_index.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o
+.PHONY : __/src/inverted_index.cpp.o
+
+__/src/inverted_index.i: __/src/inverted_index.cpp.i
+.PHONY : __/src/inverted_index.i
+
+# target to preprocess a source file
+__/src/inverted_index.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.i
+.PHONY : __/src/inverted_index.cpp.i
+
+__/src/inverted_index.s: __/src/inverted_index.cpp.s
+.PHONY : __/src/inverted_index.s
+
+# target to generate assembly for a file
+__/src/inverted_index.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.s
+.PHONY : __/src/inverted_index.cpp.s
+
 __/src/thread_pool.o: __/src/thread_pool.cpp.o
 .PHONY : __/src/thread_pool.o
 
@@ -247,6 +271,9 @@ help:
 	@echo "... CommonCxxTests.o"
 	@echo "... CommonCxxTests.i"
 	@echo "... CommonCxxTests.s"
+	@echo "... __/src/inverted_index.o"
+	@echo "... __/src/inverted_index.i"
+	@echo "... __/src/inverted_index.s"
 	@echo "... __/src/thread_pool.o"
 	@echo "... __/src/thread_pool.i"
 	@echo "... __/src/thread_pool.s"
