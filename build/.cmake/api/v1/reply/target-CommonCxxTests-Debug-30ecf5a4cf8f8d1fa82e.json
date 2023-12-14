@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "CWServer"
+			"path" : "tests/CommonCxxTests"
 		}
 	],
 	"backtrace" : 1,
@@ -10,10 +10,12 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"include_directories"
 		],
 		"files" : 
 		[
+			"tests/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -24,8 +26,17 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 16,
+				"line" : 5,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 2
 			}
 		]
 	},
@@ -36,6 +47,13 @@
 			[
 				{
 					"fragment" : "-g -std=gnu++23"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/teh-phoenix/Documents/7/KPI7_PC_CW/include"
 				}
 			],
 			"language" : "CXX",
@@ -50,11 +68,12 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
-	"id" : "CWServer::@6890427a1f51a3e7e1df",
+	"id" : "CommonCxxTests::@a44f0ac069e85531cdee",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -70,12 +89,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "CWServer",
-	"nameOnDisk" : "CWServer",
+	"name" : "CommonCxxTests",
+	"nameOnDisk" : "CommonCxxTests",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "tests",
+		"source" : "tests"
 	},
 	"sourceGroups" : 
 	[
@@ -84,13 +103,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
+				1,
 				2
 			]
 		}
@@ -100,7 +113,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "exec/main.cpp",
+			"path" : "build/tests/CommonCxxTests.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/thread_pool_completion_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -108,11 +127,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/thread_pool.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/thread_pool.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tests/CommonCxxTests"
+			"path" : "CWServer"
 		}
 	],
 	"backtrace" : 1,
@@ -10,11 +10,12 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"include_directories"
 		],
 		"files" : 
 		[
-			"tests/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -24,7 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 5,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 13,
 				"parent" : 0
 			}
 		]
@@ -36,6 +43,13 @@
 			[
 				{
 					"fragment" : "-g -std=gnu++23"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/teh-phoenix/Documents/7/KPI7_PC_CW/include"
 				}
 			],
 			"language" : "CXX",
@@ -50,12 +64,11 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				2
+				1
 			]
 		}
 	],
-	"id" : "CommonCxxTests::@a44f0ac069e85531cdee",
+	"id" : "CWServer::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -71,12 +84,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "CommonCxxTests",
-	"nameOnDisk" : "CommonCxxTests",
+	"name" : "CWServer",
+	"nameOnDisk" : "CWServer",
 	"paths" : 
 	{
-		"build" : "tests",
-		"source" : "tests"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
@@ -85,15 +98,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				2
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				3
+				1
 			]
 		}
 	],
@@ -102,13 +107,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "build/tests/CommonCxxTests.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "tests/thread_pool_completion_test.cpp",
+			"path" : "exec/main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -116,11 +115,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/thread_pool.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/thread_pool.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

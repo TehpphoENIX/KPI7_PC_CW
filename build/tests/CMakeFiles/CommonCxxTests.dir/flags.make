@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include
 
 CXX_FLAGS = -g -std=gnu++23
 

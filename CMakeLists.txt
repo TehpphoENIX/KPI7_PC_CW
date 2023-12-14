@@ -10,9 +10,9 @@ include(CTest)
 enable_testing()
 set(TIMEOUT 100)
 
-file(GLOB INCLUDES "include/*.h")
+include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(CWServer "exec/main.cpp" ${SOURCES} ${INCLUDES})
+add_executable(CWServer "exec/main.cpp" ${SOURCES})
 
 add_subdirectory(tests)

@@ -3,6 +3,8 @@
 
 CMakeFiles/CWServer.dir/exec/main.cpp.o
  /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/iinverted_index.h
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h
  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h

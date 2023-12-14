@@ -1,31 +1,31 @@
 [
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
-  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/CWServer.dir/exec/main.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWServer.dir/exec/main.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
   "output": "CMakeFiles/CWServer.dir/exec/main.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
-  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/CWServer.dir/src/thread_pool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWServer.dir/src/thread_pool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
   "output": "CMakeFiles/CWServer.dir/src/thread_pool.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
-  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests.cpp",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests.cpp",
   "output": "tests/CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
-  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp",
   "output": "tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
-  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp",
   "output": "tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o"
 }
