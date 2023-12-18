@@ -533,32 +533,8 @@ CommonCxxTests: cmake_check_build_system
 
 # fast build rule for target.
 CommonCxxTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/build
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/build
 .PHONY : CommonCxxTests/fast
-
-CommonCxxTests.o: CommonCxxTests.cpp.o
-.PHONY : CommonCxxTests.o
-
-# target to build an object file
-CommonCxxTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o
-.PHONY : CommonCxxTests.cpp.o
-
-CommonCxxTests.i: CommonCxxTests.cpp.i
-.PHONY : CommonCxxTests.i
-
-# target to preprocess a source file
-CommonCxxTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.i
-.PHONY : CommonCxxTests.cpp.i
-
-CommonCxxTests.s: CommonCxxTests.cpp.s
-.PHONY : CommonCxxTests.s
-
-# target to generate assembly for a file
-CommonCxxTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s
-.PHONY : CommonCxxTests.cpp.s
 
 exec/main.o: exec/main.cpp.o
 .PHONY : exec/main.o
@@ -584,56 +560,53 @@ exec/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.s
 .PHONY : exec/main.cpp.s
 
-src/class.o: src/class.cpp.o
-.PHONY : src/class.o
+src/inverted_index.o: src/inverted_index.cpp.o
+.PHONY : src/inverted_index.o
 
 # target to build an object file
-src/class.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.o
-.PHONY : src/class.cpp.o
+src/inverted_index.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.o
+.PHONY : src/inverted_index.cpp.o
 
-src/class.i: src/class.cpp.i
-.PHONY : src/class.i
+src/inverted_index.i: src/inverted_index.cpp.i
+.PHONY : src/inverted_index.i
 
 # target to preprocess a source file
-src/class.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.i
-.PHONY : src/class.cpp.i
+src/inverted_index.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.i
+.PHONY : src/inverted_index.cpp.i
 
-src/class.s: src/class.cpp.s
-.PHONY : src/class.s
+src/inverted_index.s: src/inverted_index.cpp.s
+.PHONY : src/inverted_index.s
 
 # target to generate assembly for a file
-src/class.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/class.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/src/class.cpp.s
-.PHONY : src/class.cpp.s
+src/inverted_index.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.s
+.PHONY : src/inverted_index.cpp.s
 
-tests/test.o: tests/test.cpp.o
-.PHONY : tests/test.o
+src/thread_pool.o: src/thread_pool.cpp.o
+.PHONY : src/thread_pool.o
 
 # target to build an object file
-tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.o
-.PHONY : tests/test.cpp.o
+src/thread_pool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.o
+.PHONY : src/thread_pool.cpp.o
 
-tests/test.i: tests/test.cpp.i
-.PHONY : tests/test.i
+src/thread_pool.i: src/thread_pool.cpp.i
+.PHONY : src/thread_pool.i
 
 # target to preprocess a source file
-tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.i
-.PHONY : tests/test.cpp.i
+src/thread_pool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.i
+.PHONY : src/thread_pool.cpp.i
 
-tests/test.s: tests/test.cpp.s
-.PHONY : tests/test.s
+src/thread_pool.s: src/thread_pool.cpp.s
+.PHONY : src/thread_pool.s
 
 # target to generate assembly for a file
-tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonCxxTests.dir/build.make CMakeFiles/CommonCxxTests.dir/tests/test.cpp.s
-.PHONY : tests/test.cpp.s
+src/thread_pool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.s
+.PHONY : src/thread_pool.cpp.s
 
 # Help Target
 help:
@@ -676,18 +649,15 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... CWServer"
 	@echo "... CommonCxxTests"
-	@echo "... CommonCxxTests.o"
-	@echo "... CommonCxxTests.i"
-	@echo "... CommonCxxTests.s"
 	@echo "... exec/main.o"
 	@echo "... exec/main.i"
 	@echo "... exec/main.s"
-	@echo "... src/class.o"
-	@echo "... src/class.i"
-	@echo "... src/class.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
+	@echo "... src/inverted_index.o"
+	@echo "... src/inverted_index.i"
+	@echo "... src/inverted_index.s"
+	@echo "... src/thread_pool.o"
+	@echo "... src/thread_pool.i"
+	@echo "... src/thread_pool.s"
 .PHONY : help
 
 
