@@ -17,12 +17,18 @@ InvertedIndex::InvertedIndex(const std::size_t initialSize, const float loadFact
 
 void InvertedIndex::insert(const std::string token, const std::string document)
 {
+    if ( finished )
+        throw std::exception();
+        
     std::unique_lock<std::mutex> lock(writerLock);
     insertNonSync(token, document);
 }
 
 void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::string>> pairs)
 {
+    if ( finished )
+        throw std::exception();
+
     std::unique_lock<std::mutex> lock(writerLock);
     for ( auto pair : pairs )
     {
@@ -32,14 +38,27 @@ void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::st
 
 bool InvertedIndex::find(const std::string token)
 {
-    // TODO synchronize
+    if (!finished )
+        throw std::exception();
+
     std::size_t index = probe(token, hash(token));
     return index != -1;
 }
 
 const std::vector<std::string> &InvertedIndex::read(const std::string token)
 {
-    // TODO: insert return statement here
+    if (!finished )
+        throw std::exception();
+
+    std::size_t index = probe(token, hash(token));
+    if ( index != -1)
+    {
+        return buckets[index].second;
+    }
+    else
+    {
+        throw std::exception();
+    }
 }
 
 void InvertedIndex::insertNonSync(const std::string token, const std::string document)
@@ -65,6 +84,11 @@ void InvertedIndex::insertNonSync(const std::string token, const std::string doc
     {
         resize();
     }
+}
+
+void InvertedIndex::finish()
+{
+    finished = true;
 }
 
 void InvertedIndex::resize()
