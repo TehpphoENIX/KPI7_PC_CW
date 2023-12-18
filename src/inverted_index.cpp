@@ -88,5 +88,12 @@ std::size_t InvertedIndex::hash(const std::string token)
 
 std::size_t InvertedIndex::probe(const std::string token, std::size_t index)
 {
-
+    auto position = index;
+    unsigned long i = 0;
+    while (buckets[position].first != token && buckets[position].first != std::string())
+    {
+        i++;
+        position = (index + i + i * i) % buckets.size();
+    }
+    return position;
 }

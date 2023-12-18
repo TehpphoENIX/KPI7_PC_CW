@@ -11,6 +11,7 @@
         "cinttypes": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
+        "codecvt": "cpp",
         "compare": "cpp",
         "concepts": "cpp",
         "condition_variable": "cpp",
@@ -23,6 +24,7 @@
         "cwchar": "cpp",
         "cwctype": "cpp",
         "deque": "cpp",
+        "list": "cpp",
         "map": "cpp",
         "set": "cpp",
         "string": "cpp",
@@ -66,8 +68,6 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp",
-        "list": "cpp",
-        "codecvt": "cpp"
+        "variant": "cpp"
     }
 }
