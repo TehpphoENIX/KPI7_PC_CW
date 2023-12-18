@@ -1,10 +1,24 @@
 #include <inverted_index.h>
 #include <assert.h>
 
+InvertedIndex::InvertedIndex(const std::size_t initialSize, const float loadFactor) :
+    loadFactor((loadFactor > 1 || loadFactor <= 0)? defaultLoadFactor : loadFactor)
+{
+    if(initialSize < 1)
+    {
+        size = defaultInitialSize;
+    }
+    else
+    {
+        size = initialSize;
+    }
+    buckets = std::vector< std::pair< std::string, std::vector< std::string >>>(size);
+}
+
 void InvertedIndex::insert(const std::string token, const std::string document)
 {
     std::unique_lock<std::mutex> lock(writerLock);
-    _insertNonSync(token, document);
+    insertNonSync(token, document);
 }
 
 void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::string>> pairs)
@@ -12,13 +26,15 @@ void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::st
     std::unique_lock<std::mutex> lock(writerLock);
     for ( auto pair : pairs )
     {
-        _insertNonSync(pair.first, pair.second);
+        insertNonSync(pair.first, pair.second);
     }
 }
 
 bool InvertedIndex::find(const std::string token)
 {
-    return false;
+    // TODO synchronize
+    std::size_t index = probe(token, hash(token));
+    return index != -1;
 }
 
 const std::vector<std::string> &InvertedIndex::read(const std::string token)
@@ -26,7 +42,7 @@ const std::vector<std::string> &InvertedIndex::read(const std::string token)
     // TODO: insert return statement here
 }
 
-void InvertedIndex::_insertNonSync(const std::string token, const std::string document)
+void InvertedIndex::insertNonSync(const std::string token, const std::string document)
 {
     std::size_t index = probe(token, hash(token));
     if ( index == -1 )
@@ -36,11 +52,41 @@ void InvertedIndex::_insertNonSync(const std::string token, const std::string do
         assert(( "InvertedIndex probing failed", index != -1 ));
     }
 
-    buckets[index].first = token;
+    if(buckets[index].first != token)
+    {
+        assert(( "Insertion does not override", buckets[index].first == std::string() ));
+        buckets[index].first = token;
+        size++;
+    }
+    
     buckets[index].second.push_back(document);
 
-    if ( buckets.size() / buckets.capacity() > loadFactor )
+    if ( size / buckets.capacity() > loadFactor )
     {
         resize();
     }
+}
+
+void InvertedIndex::resize()
+{
+    auto old_buckets = buckets;
+    buckets = std::vector< std::pair< std::string, std::vector< std::string >>>(buckets.capacity()*2);
+
+    for(auto pair : old_buckets)
+    {
+        std::size_t index = probe(pair.first, hash(pair.first));
+        assert(( "Probing failed on resize", index != -1 ));
+        buckets[index].first = pair.first;
+        buckets[index].second = pair.second;
+    }
+}
+
+std::size_t InvertedIndex::hash(const std::string token)
+{
+    return hash_v(token) / buckets.size();
+}
+
+std::size_t InvertedIndex::probe(const std::string token, std::size_t index)
+{
+
 }
