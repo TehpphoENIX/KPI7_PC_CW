@@ -80,7 +80,7 @@ void InvertedIndex::insertNonSync(const std::string token, const std::string doc
     
     buckets[index].second.push_back(document);
 
-    if ( size / buckets.capacity() > loadFactor )
+    if ( static_cast<float>(size) / buckets.capacity() > loadFactor )
     {
         resize();
     }
