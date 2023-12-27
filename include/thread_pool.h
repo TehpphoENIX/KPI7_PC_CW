@@ -10,6 +10,7 @@
 #include <string>
 #include <utility>
 #include <future>
+#include <set>
 
 typedef std::pair<int, std::function<const int()>> Task;  
 
@@ -34,8 +35,8 @@ private:
 	unsigned int poolStartCountdown = N;
 	std::shared_ptr<bool> unsafeShutdown = std::make_shared<bool>(false);
 
-	static constexpr auto compare_function = [](Task a,Task b) { return (a.first > b.first); };
-	std::priority_queue<Task, std::vector<Task>, decltype(compare_function)> priorityQueue;
+	static constexpr auto task_compare = [](Task a,Task b) { return (a.first > b.first); };
+	std::priority_queue<Task, std::vector<Task>, decltype(task_compare)> priorityQueue;
 	std::shared_ptr<std::mutex> rwLock = std::make_shared<std::mutex>();
 	std::condition_variable condition;
 
@@ -49,13 +50,20 @@ private:
 	double avgQueueSizeDivider = 0.0;
 	std::chrono::system_clock::time_point timeFromLastUpdate = std::chrono::high_resolution_clock::now();
 	std::unordered_map<unsigned short, threadStatusEnum> threadStatusMap;
+
+	static constexpr auto sub_compare = [](std::function<void()> a,std::function<void()> b) { return true; };
+	std::set<std::function<void()>, decltype(sub_compare)> subscribersOnEmpty;
+	bool subscribersOnEmptyCalled = true;
+
 public:
 	ThreadPool(unsigned int N, bool exitImmediatlyOnTerminate = false);
+
 	ThreadPool(const ThreadPool&) = delete;
 	ThreadPool(ThreadPool&& other) = delete;
 	ThreadPool& operator=(ThreadPool& rhs) = delete;
 	ThreadPool& operator=(ThreadPool&& rhs) = delete;
 	~ThreadPool();
+
 	void terminate();
 	void terminateIm();
 
@@ -91,9 +99,13 @@ public:
 	double avgTaskCompletionTime();
 	void avgTaskCompletionTimeReset();
 
+	//subscribtions
+	std::pair<std::set<std::function<void ()>>::iterator, bool> subscribeOnEmpty(std::function<void()> callback);
+	void unsubscribeOnEmpty(std::set<std::function<void ()>>::iterator itterator);
 private:
 	void runner(unsigned short id);
 
 	//must be called before queue operations
 	void updateAvgQueueSize();
+	void callSubscribersOnEmpty();
 };

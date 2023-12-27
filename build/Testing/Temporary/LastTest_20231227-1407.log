@@ -1,18 +1,18 @@
-Start testing: Dec 27 17:17 EET
+Start testing: Dec 27 17:52 EET
 ----------------------------------------------------------
-3/3 Testing: inverted_index_write_test_multithread
-3/3 Test: inverted_index_write_test_multithread
-Command: "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests" "inverted_index_write_test_multithread"
+4/4 Testing: thread_pool_subscriber_test
+4/4 Test: thread_pool_subscriber_test
+Command: "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests" "thread_pool_subscriber_test"
 Directory: /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests
-"inverted_index_write_test_multithread" start time: Dec 27 17:17 EET
+"thread_pool_subscriber_test" start time: Dec 27 17:52 EET
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.04 sec
+Test time =   1.00 sec
 ----------------------------------------------------------
 Test Passed.
-"inverted_index_write_test_multithread" end time: Dec 27 17:17 EET
-"inverted_index_write_test_multithread" time elapsed: 00:00:00
+"thread_pool_subscriber_test" end time: Dec 27 17:52 EET
+"thread_pool_subscriber_test" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-End testing: Dec 27 17:17 EET
+End testing: Dec 27 17:52 EET

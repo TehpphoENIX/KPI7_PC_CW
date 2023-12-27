@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o.d"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o.d"
+  "CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o"
+  "CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o.d"
   "CommonCxxTests"
   "CommonCxxTests.pdb"
 )

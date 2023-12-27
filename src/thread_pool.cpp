@@ -25,7 +25,12 @@ void ThreadPool::runner(unsigned short id) {
 			std::unique_lock<std::mutex> lock(*mutex);
 			auto startTime = TIME_NOW;
 			if (!*localStop && !running) threadStatusMap[id] = paused;
-			if (!*localStop && priorityQueue.empty()) threadStatusMap[id] = waiting;
+			if (!*localStop && priorityQueue.empty()) 
+			{
+				threadStatusMap[id] = waiting;
+				if(!subscribersOnEmptyCalled)
+					callSubscribersOnEmpty();
+			}
 			condition.wait(lock, [this, localStop] {return *localStop || (running && !priorityQueue.empty()); });
 			auto endTime = TIME_NOW;
 			if (*localStop) 
@@ -73,7 +78,6 @@ void ThreadPool::updateAvgQueueSize()
 	avgQueueSizeVar += queueSize * time;
 	avgQueueSizeDivider += time;
 }
-
 
 ThreadPool::ThreadPool(unsigned int N, bool ExitImmediatlyOnTerminate) :
 	N(N), exitImmediatlyOnTerminate(ExitImmediatlyOnTerminate)
@@ -164,7 +168,11 @@ void ThreadPool::addTask(Task task)
 	updateAvgQueueSize();
 	priorityQueue.push(task);
 	size_t out = priorityQueue.size();
-	if (out == 1) condition.notify_one();
+	if (out == 1) 
+	{
+		subscribersOnEmptyCalled = false;
+		condition.notify_one();
+	}
 }
 
 
@@ -233,4 +241,25 @@ void ThreadPool::avgTaskCompletionTimeReset()
 	LOCK_MUTEX;
 	avgTaskCompletionTimeVar = 0.0;
 	avgTaskCompletionTimeDivider = 0;
+}
+
+std::pair<std::set<std::function<void ()>>::iterator, bool> ThreadPool::subscribeOnEmpty(std::function<void()> callback)
+{
+	LOCK_MUTEX;
+	return subscribersOnEmpty.insert(callback);
+}
+
+void ThreadPool::unsubscribeOnEmpty(std::set<std::function<void ()>>::iterator itterator)
+{
+	LOCK_MUTEX;
+	subscribersOnEmpty.erase(itterator);
+}
+
+
+void ThreadPool::callSubscribersOnEmpty()
+{
+	for(auto item : subscribersOnEmpty)
+	{
+		item();
+	}
 }

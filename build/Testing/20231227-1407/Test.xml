@@ -21,22 +21,22 @@
 	TotalVirtualMemory="16877"
 	TotalPhysicalMemory="7866"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="3499.98"
+	ProcessorClockFrequency="3499.97"
 	>
 	<Testing>
-		<StartDateTime>Dec 27 17:17 EET</StartDateTime>
-		<StartTestTime>1703690239</StartTestTime>
+		<StartDateTime>Dec 27 17:52 EET</StartDateTime>
+		<StartTestTime>1703692357</StartTestTime>
 		<TestList>
-			<Test>./tests/inverted_index_write_test_multithread</Test>
+			<Test>./tests/thread_pool_subscriber_test</Test>
 		</TestList>
 		<Test Status="passed">
-			<Name>inverted_index_write_test_multithread</Name>
+			<Name>thread_pool_subscriber_test</Name>
 			<Path>./tests</Path>
-			<FullName>./tests/inverted_index_write_test_multithread</FullName>
-			<FullCommandLine>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "inverted_index_write_test_multithread"</FullCommandLine>
+			<FullName>./tests/thread_pool_subscriber_test</FullName>
+			<FullCommandLine>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "thread_pool_subscriber_test"</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0350822</Value>
+					<Value>1.00444</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -45,7 +45,7 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "inverted_index_write_test_multithread"</Value>
+					<Value>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "thread_pool_subscriber_test"</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Environment">
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
@@ -55,8 +55,8 @@
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Dec 27 17:17 EET</EndDateTime>
-		<EndTestTime>1703690239</EndTestTime>
+		<EndDateTime>Dec 27 17:52 EET</EndDateTime>
+		<EndTestTime>1703692358</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
