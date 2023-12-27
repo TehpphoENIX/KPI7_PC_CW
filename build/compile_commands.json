@@ -37,6 +37,12 @@
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_multithread.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_multithread.cpp",
+  "output": "tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
   "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/inverted_index.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/inverted_index.cpp",
   "output": "tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o"

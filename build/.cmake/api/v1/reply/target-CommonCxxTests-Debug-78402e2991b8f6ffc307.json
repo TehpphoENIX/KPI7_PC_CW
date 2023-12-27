@@ -26,7 +26,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
@@ -71,7 +71,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -108,7 +109,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -130,6 +132,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "tests/inverted_index_write_test_single.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/inverted_index_write_test_multithread.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

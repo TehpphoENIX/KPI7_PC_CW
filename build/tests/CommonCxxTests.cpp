@@ -13,6 +13,7 @@
 /* Forward declare test functions. */
 int thread_pool_completion_test(int, char*[]);
 int inverted_index_write_test_single(int, char*[]);
+int inverted_index_write_test_multithread(int, char*[]);
 
 
 #ifdef __cplusplus
@@ -52,6 +53,10 @@ CM_LOCAL const functionMapEntry cmakeGeneratedFunctionMapEntries[] = {
   {
     "inverted_index_write_test_single",
     inverted_index_write_test_single
+  },
+  {
+    "inverted_index_write_test_multithread",
+    inverted_index_write_test_multithread
   },
 
   { CM_NULL, CM_NULL } /* NOLINT */

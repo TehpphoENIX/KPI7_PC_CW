@@ -232,6 +232,30 @@ __/src/thread_pool.cpp.s:
 	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.s
 .PHONY : __/src/thread_pool.cpp.s
 
+inverted_index_write_test_multithread.o: inverted_index_write_test_multithread.cpp.o
+.PHONY : inverted_index_write_test_multithread.o
+
+# target to build an object file
+inverted_index_write_test_multithread.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o
+.PHONY : inverted_index_write_test_multithread.cpp.o
+
+inverted_index_write_test_multithread.i: inverted_index_write_test_multithread.cpp.i
+.PHONY : inverted_index_write_test_multithread.i
+
+# target to preprocess a source file
+inverted_index_write_test_multithread.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.i
+.PHONY : inverted_index_write_test_multithread.cpp.i
+
+inverted_index_write_test_multithread.s: inverted_index_write_test_multithread.cpp.s
+.PHONY : inverted_index_write_test_multithread.s
+
+# target to generate assembly for a file
+inverted_index_write_test_multithread.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.s
+.PHONY : inverted_index_write_test_multithread.cpp.s
+
 inverted_index_write_test_single.o: inverted_index_write_test_single.cpp.o
 .PHONY : inverted_index_write_test_single.o
 
@@ -301,6 +325,9 @@ help:
 	@echo "... __/src/thread_pool.o"
 	@echo "... __/src/thread_pool.i"
 	@echo "... __/src/thread_pool.s"
+	@echo "... inverted_index_write_test_multithread.o"
+	@echo "... inverted_index_write_test_multithread.i"
+	@echo "... inverted_index_write_test_multithread.s"
 	@echo "... inverted_index_write_test_single.o"
 	@echo "... inverted_index_write_test_single.i"
 	@echo "... inverted_index_write_test_single.s"
