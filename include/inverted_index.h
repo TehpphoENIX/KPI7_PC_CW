@@ -11,7 +11,7 @@ class InvertedIndex :
 {
 private:
     static const std::size_t defaultInitialSize = 4;
-    static const float defaultLoadFactor = 0.6;
+    static constexpr float defaultLoadFactor = 0.6f;
     std::vector< std::pair< std::string, std::vector< std::string >>> buckets;
     std::mutex readerLock, writerLock;
     float loadFactor;
@@ -19,7 +19,7 @@ private:
     std::hash<std::string> hash_v = std::hash<std::string>();
     bool finished = false;
 public:
-    InvertedIndex(const std::size_t initialSize = defaultInitialSize, const float loadFactor);
+    InvertedIndex(const std::size_t initialSize = defaultInitialSize, const float loadFactor = defaultLoadFactor);
     virtual void insert(const std::string token, const std::string document) override;
     virtual void insertBatch(const std::vector<std::pair<std::string,std::string>> pairs) override;
     virtual bool find(const std::string token) override;

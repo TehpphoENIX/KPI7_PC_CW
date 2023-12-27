@@ -232,6 +232,30 @@ __/src/thread_pool.cpp.s:
 	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.s
 .PHONY : __/src/thread_pool.cpp.s
 
+inverted_index_write_test_single.o: inverted_index_write_test_single.cpp.o
+.PHONY : inverted_index_write_test_single.o
+
+# target to build an object file
+inverted_index_write_test_single.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o
+.PHONY : inverted_index_write_test_single.cpp.o
+
+inverted_index_write_test_single.i: inverted_index_write_test_single.cpp.i
+.PHONY : inverted_index_write_test_single.i
+
+# target to preprocess a source file
+inverted_index_write_test_single.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.i
+.PHONY : inverted_index_write_test_single.cpp.i
+
+inverted_index_write_test_single.s: inverted_index_write_test_single.cpp.s
+.PHONY : inverted_index_write_test_single.s
+
+# target to generate assembly for a file
+inverted_index_write_test_single.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.s
+.PHONY : inverted_index_write_test_single.cpp.s
+
 thread_pool_completion_test.o: thread_pool_completion_test.cpp.o
 .PHONY : thread_pool_completion_test.o
 
@@ -277,6 +301,9 @@ help:
 	@echo "... __/src/thread_pool.o"
 	@echo "... __/src/thread_pool.i"
 	@echo "... __/src/thread_pool.s"
+	@echo "... inverted_index_write_test_single.o"
+	@echo "... inverted_index_write_test_single.i"
+	@echo "... inverted_index_write_test_single.s"
 	@echo "... thread_pool_completion_test.o"
 	@echo "... thread_pool_completion_test.i"
 	@echo "... thread_pool_completion_test.s"

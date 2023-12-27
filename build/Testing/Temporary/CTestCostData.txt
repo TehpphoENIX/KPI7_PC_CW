@@ -1,3 +1,4 @@
 thread_pool_completion_test 24 0.673273
 CommonCxxTests 0 0
+inverted_index_write_test_single 1 0.00437375
 ---

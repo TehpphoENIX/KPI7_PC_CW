@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o.d"
   "CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o.d"
+  "CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o"
+  "CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o.d"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o.d"
   "CommonCxxTests"

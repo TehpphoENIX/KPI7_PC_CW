@@ -19,7 +19,7 @@ void InvertedIndex::insert(const std::string token, const std::string document)
 {
     if ( finished )
         throw std::exception();
-        
+
     std::unique_lock<std::mutex> lock(writerLock);
     insertNonSync(token, document);
 }
@@ -107,7 +107,7 @@ void InvertedIndex::resize()
 
 std::size_t InvertedIndex::hash(const std::string token)
 {
-    return hash_v(token) / buckets.size();
+    return hash_v(token) % buckets.size();
 }
 
 std::size_t InvertedIndex::probe(const std::string token, std::size_t index)

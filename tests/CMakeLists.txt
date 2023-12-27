@@ -1,5 +1,6 @@
 create_test_sourcelist (Tests CommonCxxTests.cpp
   thread_pool_completion_test.cpp
+  inverted_index_write_test_single.cpp
 )
 
 add_executable (CommonCxxTests ${Tests} ${SOURCES} ${INCLUDES})
