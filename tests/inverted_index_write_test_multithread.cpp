@@ -45,7 +45,7 @@ int inverted_index_write_test_multithread(int argc, char** argv)
         {
             assert(("element found", ii.find(pair.first) ));
 
-            assert(("element retrievable", ii.read(pair.first)[0] == pair.second));
+            assert(("element retrievable", *ii.read(pair.first).begin() == pair.second));
         }
     }
     return 0;

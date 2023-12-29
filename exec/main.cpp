@@ -184,7 +184,7 @@ int main(int argc, char** argv)
 
                 std::string buffer(4096, '\0');
                 recv(clientSocket, buffer.data(), buffer.length(), 0);
-                message << clientId << "sent:\n";
+                message << clientId << " sent:\n";
                 message << buffer << "\n";
                 std::cout << message.str();
                 message.str("<>");
@@ -192,19 +192,35 @@ int main(int argc, char** argv)
                 std::stringstream ss(buffer);
                 std::string word;
                 std::set<std::string> listOfDocuments;
+                bool notFirst = false;
                 while (ss >> word)
                 {
                     if (invIn.find(word))
                     {
-                        std::vector<std::string> documents = invIn.read(word);
-
-                        for (auto doc : documents)
-                        {
-                            if ()
-                        }
+                        std::set<std::string> documents = invIn.read(word);
+                        // if(notFirst){
+                        //     for (auto doc : listOfDocuments)
+                        //     {
+                        //         if(documents.find())
+                        //     }
+                        // }
+                        // else
+                        // {
+                        //     listOfDocuments = documents;
+                        // }
+                        listOfDocuments = documents;
                     }
                 }
-                
+                buffer = std::string();
+                for(auto doc : listOfDocuments)
+                {
+                    buffer += doc + '\n';
+                }
+
+                send(clientSocket, buffer.c_str(), buffer.size(), 0);
+                message << "to " << clientId << ":\n";
+                message << buffer << "\n";
+                std::cout << message.str();
 
                 return 0;
             }});

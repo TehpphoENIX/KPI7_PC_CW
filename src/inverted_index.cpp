@@ -12,7 +12,7 @@ InvertedIndex::InvertedIndex(const std::size_t initialSize, const float loadFact
     {
         size = initialSize;
     }
-    buckets = std::vector< std::pair< std::string, std::vector< std::string >>>(size);
+    buckets = std::vector< std::pair< std::string, std::set< std::string >>>(size);
 }
 
 void InvertedIndex::insert(const std::string token, const std::string document)
@@ -45,7 +45,7 @@ bool InvertedIndex::find(const std::string token)
     return index != -1;
 }
 
-const std::vector<std::string> &InvertedIndex::read(const std::string token)
+const std::set<std::string> &InvertedIndex::read(const std::string token)
 {
     if (!finished )
         throw std::exception();
@@ -78,7 +78,7 @@ void InvertedIndex::insertNonSync(const std::string token, const std::string doc
         size++;
     }
     
-    buckets[index].second.push_back(document);
+    buckets[index].second.insert(document);
 
     if ( static_cast<float>(size) / buckets.capacity() > loadFactor )
     {
@@ -94,7 +94,7 @@ void InvertedIndex::finish()
 void InvertedIndex::resize()
 {
     auto old_buckets = buckets;
-    buckets = std::vector< std::pair< std::string, std::vector< std::string >>>(buckets.capacity()*2);
+    buckets = std::vector< std::pair< std::string, std::set< std::string >>>(buckets.capacity()*2);
 
     for(auto pair : old_buckets)
     {

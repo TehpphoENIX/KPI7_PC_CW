@@ -1,18 +1,17 @@
 #pragma once
-#include <iinverted_index.h>
 #include <vector>
 #include <mutex>
 #include <string>
 #include <unordered_map>
 #include <map>
+#include <set>
 
-class InvertedIndex :
-    public IInvertedIndex
+class InvertedIndex
 {
 private:
     static const std::size_t defaultInitialSize = 4;
     static constexpr float defaultLoadFactor = 0.6f;
-    std::vector< std::pair< std::string, std::vector< std::string >>> buckets;
+    std::vector< std::pair< std::string, std::set< std::string >>> buckets;
     std::mutex readerLock, writerLock;
     float loadFactor;
     std::size_t size;
@@ -20,10 +19,10 @@ private:
     bool finished = false;
 public:
     InvertedIndex(const std::size_t initialSize = defaultInitialSize, const float loadFactor = defaultLoadFactor);
-    virtual void insert(const std::string token, const std::string document) override;
-    virtual void insertBatch(const std::vector<std::pair<std::string,std::string>>& pairs) override;
-    virtual bool find(const std::string token) override;
-    virtual const std::vector<std::string>& read(const std::string token) override;
+    virtual void insert(const std::string token, const std::string document);
+    virtual void insertBatch(const std::vector<std::pair<std::string,std::string>>& pairs);
+    virtual bool find(const std::string token);
+    virtual const std::set<std::string>& read(const std::string token);
     void finish();
 private:
     std::size_t hash(const std::string token);
