@@ -5,9 +5,36 @@
 #include <mutex>
 #include <condition_variable>
 #include <assert.h>
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <sstream>
 
 #include <thread_pool.h>
 #include <inverted_index.h>
+
+const int HandleRegularFile(const std::filesystem::path p, InvertedIndex& ii)
+{
+    std::set<std::string> words;
+    std::ifstream file(p);
+
+    std::string word;
+    while (file >> word)
+    {
+        std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+        words.insert(word);
+    }
+    
+    std::vector<std::pair<std::string,std::string>> insertion;
+
+    for (auto word : words)
+    {
+        insertion.push_back({word, std::filesystem::absolute(p)});
+    }
+
+    ii.insertBatch(insertion);
+    return 0;
+}
 
 const int HandleFile(const std::filesystem::path p, ThreadPool& tp, InvertedIndex& ii)
 {
@@ -17,18 +44,19 @@ const int HandleFile(const std::filesystem::path p, ThreadPool& tp, InvertedInde
         std::filesystem::directory_iterator diritt(p);
         for(auto file : diritt)
         {
-            tp.addTask({1,std::bind(HandleFile,file, tp, ii)});
+            tp.addTask({1,std::function<const int()>([file, &tp, &ii] -> const int { return HandleFile(file, tp, ii); })});
         }
     }
     else if (std::filesystem::is_regular_file(p))
     {
-        //TODO
+        tp.addTask({0,[p, &ii]{ return HandleRegularFile(p, ii); }});
     }
 
     return 0;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv) 
+{
     //transfer argv to better container
     std::vector<std::string> argvec;
     for (int i = 1; i < argc; i++)
@@ -55,6 +83,7 @@ int main(int argc, char** argv) {
     ThreadPool tp(4);
     InvertedIndex invIn(64ul);
     //Construction process
+    std::cout << "constructing..." << std::endl;
     {
         std::mutex m;
         std::condition_variable c;
@@ -72,13 +101,15 @@ int main(int argc, char** argv) {
         {
             for (auto file : initialFileList)
             {
-                tp.addTask({1,std::bind(HandleFile,file, tp, invIn)});
+                tp.addTask({1, [file, &tp, &invIn]{ return HandleFile(file, tp, invIn); }});
             }
-            std::unique_lock<std::mutex> lock;
-            c.wait(lock,[&constructionFinished]{ return static_cast<bool>(constructionFinished); });
+            std::unique_lock<std::mutex> lock(m);
+            c.wait(lock, [&constructionFinished]{ return static_cast<bool>(constructionFinished); });
         }
         tp.unsubscribeOnEmpty(subIttPair.first);
     }
-
+    invIn.finish();
+    std::cout << "construction completed\n\n" << std::endl;
+    //Server start
     
 }

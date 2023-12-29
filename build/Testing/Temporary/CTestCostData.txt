@@ -1,6 +1,6 @@
-thread_pool_completion_test 31 0.750698
+thread_pool_completion_test 32 0.758617
 CommonCxxTests 0 0
-inverted_index_write_test_single 8 0.0137776
-inverted_index_write_test_multithread 22 0.0173711
-thread_pool_subscriber_test 1 1.00444
+inverted_index_write_test_single 9 0.0126572
+inverted_index_write_test_multithread 23 0.0173272
+thread_pool_subscriber_test 2 1.00442
 ---

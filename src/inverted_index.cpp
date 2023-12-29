@@ -24,7 +24,7 @@ void InvertedIndex::insert(const std::string token, const std::string document)
     insertNonSync(token, document);
 }
 
-void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::string>> pairs)
+void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::string>>& pairs)
 {
     if ( finished )
         throw std::exception();
