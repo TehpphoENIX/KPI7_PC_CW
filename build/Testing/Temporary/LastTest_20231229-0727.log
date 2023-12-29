@@ -1,18 +1,3 @@
-Start testing: Dec 29 12:38 EET
+Start testing: Dec 29 19:52 EET
 ----------------------------------------------------------
-4/5 Testing: thread_pool_thread_count_test
-4/5 Test: thread_pool_thread_count_test
-Command: "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests" "thread_pool_thread_count_test"
-Directory: /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests
-"thread_pool_thread_count_test" start time: Dec 29 12:38 EET
-Output:
-----------------------------------------------------------
-<end of output>
-Test time =   0.00 sec
-----------------------------------------------------------
-Test Passed.
-"thread_pool_thread_count_test" end time: Dec 29 12:38 EET
-"thread_pool_thread_count_test" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Dec 29 12:38 EET
+End testing: Dec 29 19:52 EET
