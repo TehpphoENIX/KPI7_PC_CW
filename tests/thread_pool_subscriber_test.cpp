@@ -16,16 +16,16 @@ int thread_pool_subscriber_test(int argc, char** argv)
 	
 
 	ThreadPool tp(4);
-	tp.subscribeOnEmpty([&subscriber_called1]{
+	tp.subscribeOnFinish([&subscriber_called1]{
 		subscriber_called1 = true;
 	});
-	tp.subscribeOnEmpty([&subscriber_called2]{
+	tp.subscribeOnFinish([&subscriber_called2]{
 		subscriber_called2 = true;
 	});
-	auto dont_call = tp.subscribeOnEmpty([&subscriber_called3]{
+	auto dont_call = tp.subscribeOnFinish([&subscriber_called3]{
 		subscriber_called3 = true;
 	});
-	tp.unsubscribeOnEmpty(dont_call.first);
+	tp.unsubscribeOnFinish(dont_call.first);
 	for (int i=0; i < tasks.size(); i++)
 	{
 		tp.addTask({0,std::function<const int()>([&tasks,i]{ tasks[i] = true; return 0; })});

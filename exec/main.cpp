@@ -57,7 +57,8 @@ const int HandleFile(const std::filesystem::path p, ThreadPool& tp, InvertedInde
 
 int main(int argc, char** argv) 
 {
-    //transfer argv to better container
+    try
+    {//transfer argv to better container
     std::vector<std::string> argvec;
     for (int i = 1; i < argc; i++)
     {
@@ -87,14 +88,7 @@ int main(int argc, char** argv)
     {
         std::mutex m;
         std::condition_variable c;
-        std::atomic_bool constructionFinished = false;
-        auto subIttPair = tp.subscribeOnEmpty([&constructionFinished, &c] { 
-                bool expected = false;
-                do
-                {
-                    constructionFinished.compare_exchange_strong(expected, true);
-                }
-                while (expected == false);
+        auto subIttPair = tp.subscribeOnFinish([&c] { 
                 c.notify_one();
             });
         assert(("Subscribtion Successful", subIttPair.second));
@@ -104,12 +98,18 @@ int main(int argc, char** argv)
                 tp.addTask({1, [file, &tp, &invIn]{ return HandleFile(file, tp, invIn); }});
             }
             std::unique_lock<std::mutex> lock(m);
-            c.wait(lock, [&constructionFinished]{ return static_cast<bool>(constructionFinished); });
+            c.wait(lock);
         }
-        tp.unsubscribeOnEmpty(subIttPair.first);
+        tp.unsubscribeOnFinish(subIttPair.first);
     }
     invIn.finish();
     std::cout << "construction completed\n\n" << std::endl;
     //Server start
-    
+        return 0;
+    }
+    catch(std::exception e)
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 }

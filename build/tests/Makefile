@@ -328,6 +328,30 @@ thread_pool_subscriber_test.cpp.s:
 	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.s
 .PHONY : thread_pool_subscriber_test.cpp.s
 
+thread_pool_thread_count_test.o: thread_pool_thread_count_test.cpp.o
+.PHONY : thread_pool_thread_count_test.o
+
+# target to build an object file
+thread_pool_thread_count_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o
+.PHONY : thread_pool_thread_count_test.cpp.o
+
+thread_pool_thread_count_test.i: thread_pool_thread_count_test.cpp.i
+.PHONY : thread_pool_thread_count_test.i
+
+# target to preprocess a source file
+thread_pool_thread_count_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.i
+.PHONY : thread_pool_thread_count_test.cpp.i
+
+thread_pool_thread_count_test.s: thread_pool_thread_count_test.cpp.s
+.PHONY : thread_pool_thread_count_test.s
+
+# target to generate assembly for a file
+thread_pool_thread_count_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.s
+.PHONY : thread_pool_thread_count_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -361,6 +385,9 @@ help:
 	@echo "... thread_pool_subscriber_test.o"
 	@echo "... thread_pool_subscriber_test.i"
 	@echo "... thread_pool_subscriber_test.s"
+	@echo "... thread_pool_thread_count_test.o"
+	@echo "... thread_pool_thread_count_test.i"
+	@echo "... thread_pool_thread_count_test.s"
 .PHONY : help
 
 

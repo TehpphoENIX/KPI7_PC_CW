@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o.d"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o"
   "CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o.d"
+  "CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o"
+  "CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o.d"
   "CommonCxxTests"
   "CommonCxxTests.pdb"
 )

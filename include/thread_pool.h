@@ -16,7 +16,7 @@ typedef std::pair<int, std::function<const int()>> Task;
 
 class ThreadPool
 {
-private:
+public:
 	enum threadStatusEnum
 	{
 		started,
@@ -52,8 +52,7 @@ private:
 	std::unordered_map<unsigned short, threadStatusEnum> threadStatusMap;
 
 	static constexpr auto sub_compare = [](std::function<void()> a,std::function<void()> b) { return true; };
-	std::set<std::function<void()>, decltype(sub_compare)> subscribersOnEmpty;
-	bool subscribersOnEmptyCalled = true;
+	std::set<std::function<void()>, decltype(sub_compare)> subscribersOnFinish;
 
 public:
 	ThreadPool(unsigned int N, bool exitImmediatlyOnTerminate = false);
@@ -100,12 +99,12 @@ public:
 	void avgTaskCompletionTimeReset();
 
 	//subscribtions
-	std::pair<std::set<std::function<void ()>>::iterator, bool> subscribeOnEmpty(std::function<void()> callback);
-	void unsubscribeOnEmpty(std::set<std::function<void ()>>::iterator itterator);
+	std::pair<std::set<std::function<void ()>>::iterator, bool> subscribeOnFinish(std::function<void()> callback);
+	void unsubscribeOnFinish(std::set<std::function<void ()>>::iterator itterator);
 private:
 	void runner(unsigned short id);
 
 	//must be called before queue operations
 	void updateAvgQueueSize();
-	void callSubscribersOnEmpty();
+	void callSubscribersOnFinish();
 };

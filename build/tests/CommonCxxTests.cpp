@@ -11,10 +11,11 @@
 
 
 /* Forward declare test functions. */
-int thread_pool_completion_test(int, char*[]);
 int inverted_index_write_test_single(int, char*[]);
 int inverted_index_write_test_multithread(int, char*[]);
 int thread_pool_subscriber_test(int, char*[]);
+int thread_pool_thread_count_test(int, char*[]);
+int thread_pool_completion_test(int, char*[]);
 
 
 #ifdef __cplusplus
@@ -48,10 +49,6 @@ typedef struct /* NOLINT */
 
 CM_LOCAL const functionMapEntry cmakeGeneratedFunctionMapEntries[] = {
     {
-    "thread_pool_completion_test",
-    thread_pool_completion_test
-  },
-  {
     "inverted_index_write_test_single",
     inverted_index_write_test_single
   },
@@ -62,6 +59,14 @@ CM_LOCAL const functionMapEntry cmakeGeneratedFunctionMapEntries[] = {
   {
     "thread_pool_subscriber_test",
     thread_pool_subscriber_test
+  },
+  {
+    "thread_pool_thread_count_test",
+    thread_pool_thread_count_test
+  },
+  {
+    "thread_pool_completion_test",
+    thread_pool_completion_test
   },
 
   { CM_NULL, CM_NULL } /* NOLINT */

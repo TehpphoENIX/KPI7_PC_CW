@@ -28,8 +28,14 @@ void ThreadPool::runner(unsigned short id) {
 			if (!*localStop && priorityQueue.empty()) 
 			{
 				threadStatusMap[id] = waiting;
-				if(!subscribersOnEmptyCalled)
-					callSubscribersOnEmpty();
+				bool finished = true;
+				for (auto th : threadStatusMap)
+				{
+					if(th.second != waiting)
+						finished = false;
+				}
+				if (finished)
+					callSubscribersOnFinish();
 			}
 			condition.wait(lock, [this, localStop] {return *localStop || (running && !priorityQueue.empty()); });
 			auto endTime = TIME_NOW;
@@ -170,7 +176,6 @@ void ThreadPool::addTask(Task task)
 	size_t out = priorityQueue.size();
 	if (out == 1) 
 	{
-		subscribersOnEmptyCalled = false;
 		condition.notify_one();
 	}
 }
@@ -243,22 +248,22 @@ void ThreadPool::avgTaskCompletionTimeReset()
 	avgTaskCompletionTimeDivider = 0;
 }
 
-std::pair<std::set<std::function<void ()>>::iterator, bool> ThreadPool::subscribeOnEmpty(std::function<void()> callback)
+std::pair<std::set<std::function<void ()>>::iterator, bool> ThreadPool::subscribeOnFinish(std::function<void()> callback)
 {
 	LOCK_MUTEX;
-	return subscribersOnEmpty.insert(callback);
+	return subscribersOnFinish.insert(callback);
 }
 
-void ThreadPool::unsubscribeOnEmpty(std::set<std::function<void ()>>::iterator itterator)
+void ThreadPool::unsubscribeOnFinish(std::set<std::function<void()>>::iterator itterator)
 {
 	LOCK_MUTEX;
-	subscribersOnEmpty.erase(itterator);
+	subscribersOnFinish.erase(itterator);
 }
 
 
-void ThreadPool::callSubscribersOnEmpty()
+void ThreadPool::callSubscribersOnFinish()
 {
-	for(auto item : subscribersOnEmpty)
+	for(auto item : subscribersOnFinish)
 	{
 		item();
 	}
