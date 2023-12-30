@@ -38,6 +38,9 @@ void InvertedIndex::insertBatch(const std::vector<std::pair<std::string, std::st
 
 bool InvertedIndex::find(const std::string token)
 {
+    if(token.empty() || token[0] == '\0')
+        return false;
+
     if (!finished )
         throw std::exception();
 
@@ -47,6 +50,9 @@ bool InvertedIndex::find(const std::string token)
 
 const std::set<std::string> &InvertedIndex::read(const std::string token)
 {
+    if(token.empty() || token[0] == '\0')
+        throw std::exception();
+    
     if (!finished )
         throw std::exception();
 
