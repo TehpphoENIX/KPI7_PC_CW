@@ -11,6 +11,7 @@ int threadpool_thread_count_test(int argc, char** argv)
 		ThreadPool tp(N);
 
 		assert(("Number of threads is exactly as it should be (N=%s)", N, tp.currentThreadStatus().size() == N));
-    	return 0;
+    	
 	}
+	return 0;
 }
