@@ -1,4 +1,5 @@
-#include <thread_pool.h>
+#include <threadpool.h>
+
 #include <chrono>
 
 #define LOCK_MUTEX std::unique_lock<std::mutex> lock(*rwLock)

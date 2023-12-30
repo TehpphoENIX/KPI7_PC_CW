@@ -1,11 +1,11 @@
 create_test_sourcelist (Tests CommonCxxTests.cpp
 
-  inverted_index_write_test_single.cpp
-  inverted_index_write_test_multithread.cpp
+  invertedindex_write_singlethread_test.cpp
+  invertedindex_write_multithread_test.cpp
 
-  thread_pool_subscriber_test.cpp
-  thread_pool_thread_count_test.cpp
-  thread_pool_completion_test.cpp
+  threadpool_subscriber_test.cpp
+  threadpool_thread_count_test.cpp
+  threadpool_completion_test.cpp
   
 )
 

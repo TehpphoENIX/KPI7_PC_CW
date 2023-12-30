@@ -1,9 +1,10 @@
+#include <threadpool.h>
+
 #include <atomic>
 #include <cassert>
 
-#include <thread_pool.h>
 
-int thread_pool_completion_test(int argc, char** argv)
+int threadpool_completion_test(int argc, char** argv)
 {
     
     std::vector<bool> tasks;

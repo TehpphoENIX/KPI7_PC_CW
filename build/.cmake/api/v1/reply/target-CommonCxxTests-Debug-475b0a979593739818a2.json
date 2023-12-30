@@ -129,43 +129,43 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/inverted_index_write_test_single.cpp",
+			"path" : "tests/invertedindex_write_singlethread_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/inverted_index_write_test_multithread.cpp",
+			"path" : "tests/invertedindex_write_multithread_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/thread_pool_subscriber_test.cpp",
+			"path" : "tests/threadpool_subscriber_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/thread_pool_thread_count_test.cpp",
+			"path" : "tests/threadpool_thread_count_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/thread_pool_completion_test.cpp",
+			"path" : "tests/threadpool_completion_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/inverted_index.cpp",
+			"path" : "src/invertedindex.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/thread_pool.cpp",
+			"path" : "src/threadpool.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

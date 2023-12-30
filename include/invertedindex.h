@@ -1,10 +1,10 @@
 #pragma once
-#include <vector>
+#include <map>
 #include <mutex>
+#include <set>
 #include <string>
 #include <unordered_map>
-#include <map>
-#include <set>
+#include <vector>
 
 class InvertedIndex
 {

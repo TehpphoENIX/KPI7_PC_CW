@@ -1,24 +1,23 @@
-#include <vector>
-#include <string>
+#include <assert.h>
+#include <condition_variable>
 #include <filesystem>
+#include <fstream>
 #include <functional>
 #include <mutex>
-#include <condition_variable>
-#include <assert.h>
 #include <iostream>
 #include <set>
-#include <fstream>
 #include <sstream>
+#include <string>
+#include <vector>
 
 #include <getopt.h>
+#include <netdb.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <string.h>
-#include <netdb.h>
 
-#include <thread_pool.h>
-#include <inverted_index.h>
-
+#include <invertedindex.h>
+#include <threadpool.h>
 
 const char* shortopts = "hj:i:p:q:";
 const option longopts[] = {
@@ -53,15 +52,15 @@ options:\n\
 -v, --version\n\
     show version and exit.\n\
 ";
-std::string server_ip = "127.0.0.1";
-std::string server_port = "3000";
-int server_queue = 1024;
+std::string serverIp = "127.0.0.1";
+std::string serverPort = "3000";
+int serverQueue = 1024;
 int threadCount = 4;
 
-const int HandleRegularFile(const std::filesystem::path p, InvertedIndex& ii)
+const int HandleRegularFile(const std::filesystem::path filePath, InvertedIndex& invIn)
 {
     std::set<std::string> words;
-    std::ifstream file(p);
+    std::ifstream file(filePath);
 
     std::string word;
     while (file >> word)
@@ -74,27 +73,27 @@ const int HandleRegularFile(const std::filesystem::path p, InvertedIndex& ii)
 
     for (auto word : words)
     {
-        insertion.push_back({word, std::filesystem::absolute(p)});
+        insertion.push_back({word, std::filesystem::absolute(filePath)});
     }
 
-    ii.insertBatch(insertion);
+    invIn.insertBatch(insertion);
     return 0;
 }
 
-const int HandleFile(const std::filesystem::path p, ThreadPool& tp, InvertedIndex& ii)
+const int HandleFile(const std::filesystem::path filePath, ThreadPool& threadPool, InvertedIndex& invIn)
 {
     
-    if (std::filesystem::is_directory(p))
+    if (std::filesystem::is_directory(filePath))
     {
-        std::filesystem::directory_iterator diritt(p);
+        std::filesystem::directory_iterator diritt(filePath);
         for(auto file : diritt)
         {
-            tp.addTask({1,std::function<const int()>([file, &tp, &ii] -> const int { return HandleFile(file, tp, ii); })});
+            threadPool.addTask({1,std::function<const int()>([file, &threadPool, &invIn] -> const int { return HandleFile(file, threadPool, invIn); })});
         }
     }
-    else if (std::filesystem::is_regular_file(p))
+    else if (std::filesystem::is_regular_file(filePath))
     {
-        tp.addTask({0,[p, &ii]{ return HandleRegularFile(p, ii); }});
+        threadPool.addTask({0,[filePath, &invIn]{ return HandleRegularFile(filePath, invIn); }});
     }
 
     return 0;
@@ -104,24 +103,24 @@ int main(int argc, char** argv)
 {
     try
     {
-        int p;
+        int option;
         bool optParseErr = false;
-        while((p = getopt_long(argc, argv, shortopts, longopts, 0)) != -1)
+        while((option = getopt_long(argc, argv, shortopts, longopts, 0)) != -1)
         {
-            switch (p)
+            switch (option)
             {
 
             case 'j':
                 threadCount = std::stoi(optarg + 1);
                 break;
             case 'i':
-                server_ip = optarg + 1;
+                serverIp = optarg + 1;
                 break;
             case 'p':
-                server_port = optarg + 1;
+                serverPort = optarg + 1;
                 break;
             case 'q':
-                server_queue = std::stoi(optarg + 1);
+                serverQueue = std::stoi(optarg + 1);
                 break;
             case 'h':
                 std::cout << help << std::endl;
@@ -140,42 +139,43 @@ int main(int argc, char** argv)
         }
 
         //get filepathes
-        std::vector<std::filesystem::path> initialFileList;
+        std::vector<std::filesystem::path> initialFilesList;
         for (int i = optind; i < argc; i++)
         {
             if(std::filesystem::exists(argv[i]))
             {
-                initialFileList.push_back(argv[i]);
+                initialFilesList.push_back(argv[i]);
             }
         }
 
         //if empty, add current dir
-        if (initialFileList.size() == 0)
+        if (initialFilesList.size() == 0)
         {
-            initialFileList = { "." };
+            initialFilesList = { "." };
         }
 
         std::cout << "Ammount of worker threads is set to " << threadCount << std::endl;
-        ThreadPool tp(threadCount);
+        ThreadPool threadPool(threadCount);
         InvertedIndex invIn(64ul);
+
         //Construction process
         std::cout << "constructing..." << std::endl;
         {
             std::mutex m;
-            std::condition_variable c;
-            auto subIttPair = tp.subscribeOnFinish([&c] { 
-                    c.notify_one();
+            std::condition_variable finishCondition;
+            auto subIttPair = threadPool.subscribeOnFinish([&finishCondition] { 
+                    finishCondition.notify_one();
                 });
             assert(("Subscribtion Successful", subIttPair.second));
             {
-                for (auto file : initialFileList)
+                for (auto file : initialFilesList)
                 {
-                    tp.addTask({1, [file, &tp, &invIn]{ return HandleFile(file, tp, invIn); }});
+                    threadPool.addTask({1, [file, &threadPool, &invIn]{ return HandleFile(file, threadPool, invIn); }});
                 }
                 std::unique_lock<std::mutex> lock(m);
-                c.wait(lock);
+                finishCondition.wait(lock);
             }
-            tp.unsubscribeOnFinish(subIttPair.first);
+            threadPool.unsubscribeOnFinish(subIttPair.first);
         }
         invIn.finish();
         std::cout << "construction completed\n\n" << std::endl;
@@ -184,26 +184,26 @@ int main(int argc, char** argv)
         //Server start
 
         //Addr discovery
-        addrinfo hints = {}, *list, *curr;
+        addrinfo hints = {}, *addrList, *addrCurrent;
         hints.ai_family = AF_INET;
         hints.ai_socktype = SOCK_STREAM;
         hints.ai_protocol = IPPROTO_TCP;
         hints.ai_flags = AI_PASSIVE;
-        if(getaddrinfo(server_ip.c_str(), server_port.c_str(), &hints, &list) != 0)
+        if(getaddrinfo(serverIp.c_str(), serverPort.c_str(), &hints, &addrList) != 0)
         {
             std::cerr << "getaddrinfo error: " << strerror(errno) << std::endl;
             return 1;
         }
 
         int serverSocket = -1;
-        for (curr = list; curr != NULL; curr = curr->ai_next) {
+        for (addrCurrent = addrList; addrCurrent != NULL; addrCurrent = addrCurrent->ai_next) {
             int  reuse = 1;
 
-            serverSocket = socket(curr->ai_family, curr->ai_socktype, curr->ai_protocol);
+            serverSocket = socket(addrCurrent->ai_family, addrCurrent->ai_socktype, addrCurrent->ai_protocol);
             if (serverSocket == -1)
                 continue;
 
-            if (bind(serverSocket, curr->ai_addr, curr->ai_addrlen) == -1) {
+            if (bind(serverSocket, addrCurrent->ai_addr, addrCurrent->ai_addrlen) == -1) {
                 close(serverSocket);
                 serverSocket = -1;
                 continue;
@@ -216,7 +216,7 @@ int main(int argc, char** argv)
                 continue;
             }
 
-            if (listen(serverSocket, server_queue) == -1) {
+            if (listen(serverSocket, serverQueue) == -1) {
                 close(serverSocket);
                 serverSocket = -1;
                 continue;
@@ -224,37 +224,39 @@ int main(int argc, char** argv)
 
             break;
         }
-        freeaddrinfo(list);
+        freeaddrinfo(addrList);
         if (serverSocket == -1) {
-            std::cerr << "Server start failed. No valid addr.";
+            std::cerr << "Server start failed. No valid address available.";
             return -1;
         }
         
-        std::cout << "Server started on " << server_ip << ':' << server_port << std::endl;
+        std::cout << "Server started on " << serverIp << ':' << serverPort << std::endl;
 
         sockaddr clientSockAddr;
         socklen_t clientSockAddrLen;
         int clientSocket = -1;
         while(clientSocket = accept(serverSocket, &clientSockAddr, &clientSockAddrLen))
         {
-            tp.addTask({0,[clientSocket, clientSockAddr, clientSockAddrLen, &invIn]-> const int{
+            threadPool.addTask({0,[clientSocket, clientSockAddr, clientSockAddrLen, &invIn]-> const int{
+                //get client ip and port
                 std::string host, port, clientId;
                 host.resize(NI_MAXHOST);
                 port.resize(NI_MAXSERV);
                 getnameinfo(&clientSockAddr, clientSockAddrLen, host.data(), host.length(), port.data(), port.length(), NI_NUMERICSERV | NI_NUMERICHOST);
                 clientId = host + ":" + port;
-                std::stringstream message("<>");
-                message << clientId << " connected\n";
-                std::cout << message.str();
-                message.str("<>");
+                std::stringstream logMessage("<>");
+                logMessage << clientId << " connected\n";
+                std::cout << logMessage.str();
 
+                //get client message
                 std::string buffer(4096, '\0');
                 recv(clientSocket, buffer.data(), buffer.length(), 0);
-                message << clientId << " sent:\n";
-                message << buffer << "\n";
-                std::cout << message.str();
-                message.str("<>");
+                logMessage.str("<>");
+                logMessage << clientId << " sent:\n";
+                logMessage << buffer << "\n";
+                std::cout << logMessage.str();
 
+                //handle request
                 std::stringstream ss(buffer);
                 std::string word;
                 std::set<std::string> listOfDocuments;
@@ -289,17 +291,16 @@ int main(int argc, char** argv)
                     buffer += doc + '\n';
                 }
 
+                //send response
                 send(clientSocket, buffer.c_str(), buffer.size(), 0);
-                message << "to " << clientId << ":\n";
-                message << buffer << "\n";
-                std::cout << message.str();
+                logMessage.str("<>");
+                logMessage << "to " << clientId << ":\n";
+                logMessage << buffer << "\n";
+                std::cout << logMessage.str();
 
                 return 0;
             }});
         }
-
-        close(serverSocket);
-        return 0;
     }
     catch(std::exception e)
     {

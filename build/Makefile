@@ -560,53 +560,53 @@ exec/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.s
 .PHONY : exec/main.cpp.s
 
-src/inverted_index.o: src/inverted_index.cpp.o
-.PHONY : src/inverted_index.o
+src/invertedindex.o: src/invertedindex.cpp.o
+.PHONY : src/invertedindex.o
 
 # target to build an object file
-src/inverted_index.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.o
-.PHONY : src/inverted_index.cpp.o
+src/invertedindex.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/invertedindex.cpp.o
+.PHONY : src/invertedindex.cpp.o
 
-src/inverted_index.i: src/inverted_index.cpp.i
-.PHONY : src/inverted_index.i
+src/invertedindex.i: src/invertedindex.cpp.i
+.PHONY : src/invertedindex.i
 
 # target to preprocess a source file
-src/inverted_index.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.i
-.PHONY : src/inverted_index.cpp.i
+src/invertedindex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/invertedindex.cpp.i
+.PHONY : src/invertedindex.cpp.i
 
-src/inverted_index.s: src/inverted_index.cpp.s
-.PHONY : src/inverted_index.s
+src/invertedindex.s: src/invertedindex.cpp.s
+.PHONY : src/invertedindex.s
 
 # target to generate assembly for a file
-src/inverted_index.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/inverted_index.cpp.s
-.PHONY : src/inverted_index.cpp.s
+src/invertedindex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/invertedindex.cpp.s
+.PHONY : src/invertedindex.cpp.s
 
-src/thread_pool.o: src/thread_pool.cpp.o
-.PHONY : src/thread_pool.o
+src/threadpool.o: src/threadpool.cpp.o
+.PHONY : src/threadpool.o
 
 # target to build an object file
-src/thread_pool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.o
-.PHONY : src/thread_pool.cpp.o
+src/threadpool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.o
+.PHONY : src/threadpool.cpp.o
 
-src/thread_pool.i: src/thread_pool.cpp.i
-.PHONY : src/thread_pool.i
+src/threadpool.i: src/threadpool.cpp.i
+.PHONY : src/threadpool.i
 
 # target to preprocess a source file
-src/thread_pool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.i
-.PHONY : src/thread_pool.cpp.i
+src/threadpool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.i
+.PHONY : src/threadpool.cpp.i
 
-src/thread_pool.s: src/thread_pool.cpp.s
-.PHONY : src/thread_pool.s
+src/threadpool.s: src/threadpool.cpp.s
+.PHONY : src/threadpool.s
 
 # target to generate assembly for a file
-src/thread_pool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/thread_pool.cpp.s
-.PHONY : src/thread_pool.cpp.s
+src/threadpool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/src/threadpool.cpp.s
+.PHONY : src/threadpool.cpp.s
 
 # Help Target
 help:
@@ -652,12 +652,12 @@ help:
 	@echo "... exec/main.o"
 	@echo "... exec/main.i"
 	@echo "... exec/main.s"
-	@echo "... src/inverted_index.o"
-	@echo "... src/inverted_index.i"
-	@echo "... src/inverted_index.s"
-	@echo "... src/thread_pool.o"
-	@echo "... src/thread_pool.i"
-	@echo "... src/thread_pool.s"
+	@echo "... src/invertedindex.o"
+	@echo "... src/invertedindex.i"
+	@echo "... src/invertedindex.s"
+	@echo "... src/threadpool.o"
+	@echo "... src/threadpool.i"
+	@echo "... src/threadpool.s"
 .PHONY : help
 
 

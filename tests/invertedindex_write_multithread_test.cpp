@@ -1,10 +1,11 @@
-#include <inverted_index.h>
+#include <invertedindex.h>
+
 #include <assert.h>
 #include <vector>
 #include <string>
 #include <thread>
 
-int inverted_index_write_test_multithread(int argc, char** argv)
+int invertedindex_write_multithread_test(int argc, char** argv)
 {
     const int ammount_of_threads = 8;
     InvertedIndex ii;

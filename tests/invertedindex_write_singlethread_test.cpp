@@ -1,9 +1,10 @@
-#include <inverted_index.h>
-#include <assert.h>
-#include <vector>
-#include <string>
+#include <invertedindex.h>
 
-int inverted_index_write_test_single(int argc, char** argv)
+#include <assert.h>
+#include <string>
+#include <vector>
+
+int invertedindex_write_singlethread_test(int argc, char** argv)
 {
     InvertedIndex ii;
     std::vector<std::pair<std::string, std::string>> pairs;

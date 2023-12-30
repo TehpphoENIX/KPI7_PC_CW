@@ -184,173 +184,173 @@ CommonCxxTests.cpp.s:
 	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.s
 .PHONY : CommonCxxTests.cpp.s
 
-__/src/inverted_index.o: __/src/inverted_index.cpp.o
-.PHONY : __/src/inverted_index.o
+__/src/invertedindex.o: __/src/invertedindex.cpp.o
+.PHONY : __/src/invertedindex.o
 
 # target to build an object file
-__/src/inverted_index.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o
-.PHONY : __/src/inverted_index.cpp.o
+__/src/invertedindex.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/invertedindex.cpp.o
+.PHONY : __/src/invertedindex.cpp.o
 
-__/src/inverted_index.i: __/src/inverted_index.cpp.i
-.PHONY : __/src/inverted_index.i
+__/src/invertedindex.i: __/src/invertedindex.cpp.i
+.PHONY : __/src/invertedindex.i
 
 # target to preprocess a source file
-__/src/inverted_index.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.i
-.PHONY : __/src/inverted_index.cpp.i
+__/src/invertedindex.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/invertedindex.cpp.i
+.PHONY : __/src/invertedindex.cpp.i
 
-__/src/inverted_index.s: __/src/inverted_index.cpp.s
-.PHONY : __/src/inverted_index.s
+__/src/invertedindex.s: __/src/invertedindex.cpp.s
+.PHONY : __/src/invertedindex.s
 
 # target to generate assembly for a file
-__/src/inverted_index.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.s
-.PHONY : __/src/inverted_index.cpp.s
+__/src/invertedindex.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/invertedindex.cpp.s
+.PHONY : __/src/invertedindex.cpp.s
 
-__/src/thread_pool.o: __/src/thread_pool.cpp.o
-.PHONY : __/src/thread_pool.o
+__/src/threadpool.o: __/src/threadpool.cpp.o
+.PHONY : __/src/threadpool.o
 
 # target to build an object file
-__/src/thread_pool.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o
-.PHONY : __/src/thread_pool.cpp.o
+__/src/threadpool.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/threadpool.cpp.o
+.PHONY : __/src/threadpool.cpp.o
 
-__/src/thread_pool.i: __/src/thread_pool.cpp.i
-.PHONY : __/src/thread_pool.i
+__/src/threadpool.i: __/src/threadpool.cpp.i
+.PHONY : __/src/threadpool.i
 
 # target to preprocess a source file
-__/src/thread_pool.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.i
-.PHONY : __/src/thread_pool.cpp.i
+__/src/threadpool.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/threadpool.cpp.i
+.PHONY : __/src/threadpool.cpp.i
 
-__/src/thread_pool.s: __/src/thread_pool.cpp.s
-.PHONY : __/src/thread_pool.s
+__/src/threadpool.s: __/src/threadpool.cpp.s
+.PHONY : __/src/threadpool.s
 
 # target to generate assembly for a file
-__/src/thread_pool.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.s
-.PHONY : __/src/thread_pool.cpp.s
+__/src/threadpool.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/__/src/threadpool.cpp.s
+.PHONY : __/src/threadpool.cpp.s
 
-inverted_index_write_test_multithread.o: inverted_index_write_test_multithread.cpp.o
-.PHONY : inverted_index_write_test_multithread.o
+invertedindex_write_multithread_test.o: invertedindex_write_multithread_test.cpp.o
+.PHONY : invertedindex_write_multithread_test.o
 
 # target to build an object file
-inverted_index_write_test_multithread.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o
-.PHONY : inverted_index_write_test_multithread.cpp.o
+invertedindex_write_multithread_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_multithread_test.cpp.o
+.PHONY : invertedindex_write_multithread_test.cpp.o
 
-inverted_index_write_test_multithread.i: inverted_index_write_test_multithread.cpp.i
-.PHONY : inverted_index_write_test_multithread.i
+invertedindex_write_multithread_test.i: invertedindex_write_multithread_test.cpp.i
+.PHONY : invertedindex_write_multithread_test.i
 
 # target to preprocess a source file
-inverted_index_write_test_multithread.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.i
-.PHONY : inverted_index_write_test_multithread.cpp.i
+invertedindex_write_multithread_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_multithread_test.cpp.i
+.PHONY : invertedindex_write_multithread_test.cpp.i
 
-inverted_index_write_test_multithread.s: inverted_index_write_test_multithread.cpp.s
-.PHONY : inverted_index_write_test_multithread.s
+invertedindex_write_multithread_test.s: invertedindex_write_multithread_test.cpp.s
+.PHONY : invertedindex_write_multithread_test.s
 
 # target to generate assembly for a file
-inverted_index_write_test_multithread.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.s
-.PHONY : inverted_index_write_test_multithread.cpp.s
+invertedindex_write_multithread_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_multithread_test.cpp.s
+.PHONY : invertedindex_write_multithread_test.cpp.s
 
-inverted_index_write_test_single.o: inverted_index_write_test_single.cpp.o
-.PHONY : inverted_index_write_test_single.o
+invertedindex_write_singlethread_test.o: invertedindex_write_singlethread_test.cpp.o
+.PHONY : invertedindex_write_singlethread_test.o
 
 # target to build an object file
-inverted_index_write_test_single.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o
-.PHONY : inverted_index_write_test_single.cpp.o
+invertedindex_write_singlethread_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_singlethread_test.cpp.o
+.PHONY : invertedindex_write_singlethread_test.cpp.o
 
-inverted_index_write_test_single.i: inverted_index_write_test_single.cpp.i
-.PHONY : inverted_index_write_test_single.i
+invertedindex_write_singlethread_test.i: invertedindex_write_singlethread_test.cpp.i
+.PHONY : invertedindex_write_singlethread_test.i
 
 # target to preprocess a source file
-inverted_index_write_test_single.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.i
-.PHONY : inverted_index_write_test_single.cpp.i
+invertedindex_write_singlethread_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_singlethread_test.cpp.i
+.PHONY : invertedindex_write_singlethread_test.cpp.i
 
-inverted_index_write_test_single.s: inverted_index_write_test_single.cpp.s
-.PHONY : inverted_index_write_test_single.s
+invertedindex_write_singlethread_test.s: invertedindex_write_singlethread_test.cpp.s
+.PHONY : invertedindex_write_singlethread_test.s
 
 # target to generate assembly for a file
-inverted_index_write_test_single.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.s
-.PHONY : inverted_index_write_test_single.cpp.s
+invertedindex_write_singlethread_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_singlethread_test.cpp.s
+.PHONY : invertedindex_write_singlethread_test.cpp.s
 
-thread_pool_completion_test.o: thread_pool_completion_test.cpp.o
-.PHONY : thread_pool_completion_test.o
+threadpool_completion_test.o: threadpool_completion_test.cpp.o
+.PHONY : threadpool_completion_test.o
 
 # target to build an object file
-thread_pool_completion_test.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o
-.PHONY : thread_pool_completion_test.cpp.o
+threadpool_completion_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_completion_test.cpp.o
+.PHONY : threadpool_completion_test.cpp.o
 
-thread_pool_completion_test.i: thread_pool_completion_test.cpp.i
-.PHONY : thread_pool_completion_test.i
+threadpool_completion_test.i: threadpool_completion_test.cpp.i
+.PHONY : threadpool_completion_test.i
 
 # target to preprocess a source file
-thread_pool_completion_test.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.i
-.PHONY : thread_pool_completion_test.cpp.i
+threadpool_completion_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_completion_test.cpp.i
+.PHONY : threadpool_completion_test.cpp.i
 
-thread_pool_completion_test.s: thread_pool_completion_test.cpp.s
-.PHONY : thread_pool_completion_test.s
+threadpool_completion_test.s: threadpool_completion_test.cpp.s
+.PHONY : threadpool_completion_test.s
 
 # target to generate assembly for a file
-thread_pool_completion_test.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.s
-.PHONY : thread_pool_completion_test.cpp.s
+threadpool_completion_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_completion_test.cpp.s
+.PHONY : threadpool_completion_test.cpp.s
 
-thread_pool_subscriber_test.o: thread_pool_subscriber_test.cpp.o
-.PHONY : thread_pool_subscriber_test.o
+threadpool_subscriber_test.o: threadpool_subscriber_test.cpp.o
+.PHONY : threadpool_subscriber_test.o
 
 # target to build an object file
-thread_pool_subscriber_test.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o
-.PHONY : thread_pool_subscriber_test.cpp.o
+threadpool_subscriber_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_subscriber_test.cpp.o
+.PHONY : threadpool_subscriber_test.cpp.o
 
-thread_pool_subscriber_test.i: thread_pool_subscriber_test.cpp.i
-.PHONY : thread_pool_subscriber_test.i
+threadpool_subscriber_test.i: threadpool_subscriber_test.cpp.i
+.PHONY : threadpool_subscriber_test.i
 
 # target to preprocess a source file
-thread_pool_subscriber_test.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.i
-.PHONY : thread_pool_subscriber_test.cpp.i
+threadpool_subscriber_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_subscriber_test.cpp.i
+.PHONY : threadpool_subscriber_test.cpp.i
 
-thread_pool_subscriber_test.s: thread_pool_subscriber_test.cpp.s
-.PHONY : thread_pool_subscriber_test.s
+threadpool_subscriber_test.s: threadpool_subscriber_test.cpp.s
+.PHONY : threadpool_subscriber_test.s
 
 # target to generate assembly for a file
-thread_pool_subscriber_test.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.s
-.PHONY : thread_pool_subscriber_test.cpp.s
+threadpool_subscriber_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_subscriber_test.cpp.s
+.PHONY : threadpool_subscriber_test.cpp.s
 
-thread_pool_thread_count_test.o: thread_pool_thread_count_test.cpp.o
-.PHONY : thread_pool_thread_count_test.o
+threadpool_thread_count_test.o: threadpool_thread_count_test.cpp.o
+.PHONY : threadpool_thread_count_test.o
 
 # target to build an object file
-thread_pool_thread_count_test.cpp.o:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o
-.PHONY : thread_pool_thread_count_test.cpp.o
+threadpool_thread_count_test.cpp.o:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_thread_count_test.cpp.o
+.PHONY : threadpool_thread_count_test.cpp.o
 
-thread_pool_thread_count_test.i: thread_pool_thread_count_test.cpp.i
-.PHONY : thread_pool_thread_count_test.i
+threadpool_thread_count_test.i: threadpool_thread_count_test.cpp.i
+.PHONY : threadpool_thread_count_test.i
 
 # target to preprocess a source file
-thread_pool_thread_count_test.cpp.i:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.i
-.PHONY : thread_pool_thread_count_test.cpp.i
+threadpool_thread_count_test.cpp.i:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_thread_count_test.cpp.i
+.PHONY : threadpool_thread_count_test.cpp.i
 
-thread_pool_thread_count_test.s: thread_pool_thread_count_test.cpp.s
-.PHONY : thread_pool_thread_count_test.s
+threadpool_thread_count_test.s: threadpool_thread_count_test.cpp.s
+.PHONY : threadpool_thread_count_test.s
 
 # target to generate assembly for a file
-thread_pool_thread_count_test.cpp.s:
-	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.s
-.PHONY : thread_pool_thread_count_test.cpp.s
+threadpool_thread_count_test.cpp.s:
+	cd /home/teh-phoenix/Documents/7/KPI7_PC_CW/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/threadpool_thread_count_test.cpp.s
+.PHONY : threadpool_thread_count_test.cpp.s
 
 # Help Target
 help:
@@ -367,27 +367,27 @@ help:
 	@echo "... CommonCxxTests.o"
 	@echo "... CommonCxxTests.i"
 	@echo "... CommonCxxTests.s"
-	@echo "... __/src/inverted_index.o"
-	@echo "... __/src/inverted_index.i"
-	@echo "... __/src/inverted_index.s"
-	@echo "... __/src/thread_pool.o"
-	@echo "... __/src/thread_pool.i"
-	@echo "... __/src/thread_pool.s"
-	@echo "... inverted_index_write_test_multithread.o"
-	@echo "... inverted_index_write_test_multithread.i"
-	@echo "... inverted_index_write_test_multithread.s"
-	@echo "... inverted_index_write_test_single.o"
-	@echo "... inverted_index_write_test_single.i"
-	@echo "... inverted_index_write_test_single.s"
-	@echo "... thread_pool_completion_test.o"
-	@echo "... thread_pool_completion_test.i"
-	@echo "... thread_pool_completion_test.s"
-	@echo "... thread_pool_subscriber_test.o"
-	@echo "... thread_pool_subscriber_test.i"
-	@echo "... thread_pool_subscriber_test.s"
-	@echo "... thread_pool_thread_count_test.o"
-	@echo "... thread_pool_thread_count_test.i"
-	@echo "... thread_pool_thread_count_test.s"
+	@echo "... __/src/invertedindex.o"
+	@echo "... __/src/invertedindex.i"
+	@echo "... __/src/invertedindex.s"
+	@echo "... __/src/threadpool.o"
+	@echo "... __/src/threadpool.i"
+	@echo "... __/src/threadpool.s"
+	@echo "... invertedindex_write_multithread_test.o"
+	@echo "... invertedindex_write_multithread_test.i"
+	@echo "... invertedindex_write_multithread_test.s"
+	@echo "... invertedindex_write_singlethread_test.o"
+	@echo "... invertedindex_write_singlethread_test.i"
+	@echo "... invertedindex_write_singlethread_test.s"
+	@echo "... threadpool_completion_test.o"
+	@echo "... threadpool_completion_test.i"
+	@echo "... threadpool_completion_test.s"
+	@echo "... threadpool_subscriber_test.o"
+	@echo "... threadpool_subscriber_test.i"
+	@echo "... threadpool_subscriber_test.s"
+	@echo "... threadpool_thread_count_test.o"
+	@echo "... threadpool_thread_count_test.i"
+	@echo "... threadpool_thread_count_test.s"
 .PHONY : help
 
 

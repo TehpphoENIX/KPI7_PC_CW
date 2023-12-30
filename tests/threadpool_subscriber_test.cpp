@@ -1,9 +1,10 @@
+#include <threadpool.h>
+
 #include <atomic>
 #include <cassert>
 
-#include <thread_pool.h>
 
-int thread_pool_subscriber_test(int argc, char** argv)
+int threadpool_subscriber_test(int argc, char** argv)
 {
     bool subscriber_called1 = false;
     bool subscriber_called2 = false;

@@ -3,8 +3,8 @@
 
 CMakeFiles/CWServer.dir/exec/main.cpp.o
  /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -353,9 +353,9 @@ CMakeFiles/CWServer.dir/exec/main.cpp.o
  /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h
  /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
-CMakeFiles/CWServer.dir/src/inverted_index.cpp.o
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/inverted_index.cpp
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h
+CMakeFiles/CWServer.dir/src/invertedindex.cpp.o
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/invertedindex.cpp
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
@@ -560,9 +560,9 @@ CMakeFiles/CWServer.dir/src/inverted_index.cpp.o
  /usr/lib/gcc/x86_64-redhat-linux/13/include/stddef.h
  /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h
 
-CMakeFiles/CWServer.dir/src/thread_pool.cpp.o
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp
- /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h
+CMakeFiles/CWServer.dir/src/threadpool.cpp.o
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp
+ /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h

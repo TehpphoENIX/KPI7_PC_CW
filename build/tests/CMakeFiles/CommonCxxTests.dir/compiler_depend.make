@@ -74,8 +74,8 @@ tests/CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o: tests/CommonCxxTests.c
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stddef.h
 
-tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/inverted_index.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h \
+tests/CMakeFiles/CommonCxxTests.dir/__/src/invertedindex.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/invertedindex.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -280,8 +280,8 @@ tests/CMakeFiles/CommonCxxTests.dir/__/src/inverted_index.cpp.o: /home/teh-phoen
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stddef.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h
 
-tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h \
+tests/CMakeFiles/CommonCxxTests.dir/__/src/threadpool.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -594,8 +594,8 @@ tests/CMakeFiles/CommonCxxTests.dir/__/src/thread_pool.cpp.o: /home/teh-phoenix/
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
-tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_multithread.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h \
+tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_multithread_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/invertedindex_write_multithread_test.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -858,8 +858,8 @@ tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_multithread.cpp.o:
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
-tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_single.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h \
+tests/CMakeFiles/CommonCxxTests.dir/invertedindex_write_singlethread_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/invertedindex_write_singlethread_test.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1064,8 +1064,8 @@ tests/CMakeFiles/CommonCxxTests.dir/inverted_index_write_test_single.cpp.o: /hom
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stddef.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h
 
-tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h \
+tests/CMakeFiles/CommonCxxTests.dir/threadpool_completion_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_completion_test.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1359,8 +1359,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_completion_test.cpp.o: /home/teh
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
-tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_subscriber_test.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h \
+tests/CMakeFiles/CommonCxxTests.dir/threadpool_subscriber_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_subscriber_test.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1654,8 +1654,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_subscriber_test.cpp.o: /home/teh
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
-tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_thread_count_test.cpp \
-  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h \
+tests/CMakeFiles/CommonCxxTests.dir/threadpool_thread_count_test.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_thread_count_test.cpp \
+  /home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1950,11 +1950,13 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
   /usr/lib/gcc/x86_64-redhat-linux/13/include/syslimits.h
 
 
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_subscriber_test.cpp:
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_thread_count_test.cpp:
 
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_single.cpp:
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_subscriber_test.cpp:
 
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/inverted_index_write_test_multithread.cpp:
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/threadpool_completion_test.cpp:
+
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/invertedindex_write_singlethread_test.cpp:
 
 /usr/include/unistd.h:
 
@@ -2023,6 +2025,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 /usr/include/c++/13/bits/semaphore_base.h:
 
 /usr/include/c++/13/bits/ranges_uninitialized.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
@@ -2112,10 +2116,6 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 
 /usr/include/c++/13/bits/ranges_util.h:
 
-/usr/include/c++/13/bits/atomic_base.h:
-
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/include/inverted_index.h:
-
 /usr/lib/gcc/x86_64-redhat-linux/13/include/stddef.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
@@ -2125,6 +2125,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 /usr/include/sys/select.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
+
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/include/threadpool.h:
 
 /usr/include/sys/cdefs.h:
 
@@ -2143,6 +2145,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 /usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/gnu/stubs-64.h:
+
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/invertedindex.cpp:
 
 /usr/include/c++/13/pstl/pstl_config.h:
 
@@ -2166,8 +2170,6 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 
 /usr/include/c++/13/bits/stl_multiset.h:
 
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_thread_count_test.cpp:
-
 /usr/include/c++/13/bits/uses_allocator.h:
 
 /usr/include/c++/13/x86_64-redhat-linux/bits/error_constants.h:
@@ -2185,14 +2187,6 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 /usr/include/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/chrono_io.h:
-
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/inverted_index.cpp:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/include/bits/errno.h:
-
-/usr/include/c++/13/bits/locale_conv.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
@@ -2234,6 +2228,8 @@ tests/CMakeFiles/CommonCxxTests.dir/thread_pool_thread_count_test.cpp.o: /home/t
 
 /usr/include/ctype.h:
 
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/invertedindex_write_multithread_test.cpp:
+
 /usr/include/bits/struct_mutex.h:
 
 /usr/include/libintl.h:
@@ -2269,8 +2265,6 @@ tests/CommonCxxTests.cpp:
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/types/clock_t.h:
-
-/usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/stdc-predef.h:
 
@@ -2339,6 +2333,10 @@ tests/CommonCxxTests.cpp:
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/bits/types/time_t.h:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp:
 
 /usr/include/c++/13/thread:
 
@@ -2424,6 +2422,10 @@ tests/CommonCxxTests.cpp:
 
 /usr/include/c++/13/bits/stl_map.h:
 
+/usr/include/c++/13/bits/new_allocator.h:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
 /usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/c++/13/bits/stl_tree.h:
@@ -2448,6 +2450,8 @@ tests/CommonCxxTests.cpp:
 
 /usr/include/c++/13/backward/binders.h:
 
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/include/invertedindex.h:
+
 /usr/include/sys/single_threaded.h:
 
 /usr/include/c++/13/concepts:
@@ -2455,8 +2459,6 @@ tests/CommonCxxTests.cpp:
 /usr/include/bits/thread-shared-types.h:
 
 /usr/include/c++/13/cstddef:
-
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/tests/thread_pool_completion_test.cpp:
 
 /usr/include/c++/13/ctime:
 
@@ -2534,14 +2536,6 @@ tests/CommonCxxTests.cpp:
 
 /usr/include/stdint.h:
 
-/usr/include/c++/13/bits/new_allocator.h:
-
-/usr/include/c++/13/bits/stl_uninitialized.h:
-
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/thread_pool.cpp:
-
-/home/teh-phoenix/Documents/7/KPI7_PC_CW/include/thread_pool.h:
-
 /usr/include/bits/confname.h:
 
 /usr/include/bits/types/struct_FILE.h:
@@ -2597,6 +2591,12 @@ tests/CommonCxxTests.cpp:
 /usr/include/bits/typesizes.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/bits/errno.h:
+
+/usr/include/c++/13/bits/locale_conv.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
 

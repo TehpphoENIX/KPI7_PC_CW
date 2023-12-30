@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CWServer.dir/exec/main.cpp.o"
   "CMakeFiles/CWServer.dir/exec/main.cpp.o.d"
-  "CMakeFiles/CWServer.dir/src/inverted_index.cpp.o"
-  "CMakeFiles/CWServer.dir/src/inverted_index.cpp.o.d"
-  "CMakeFiles/CWServer.dir/src/thread_pool.cpp.o"
-  "CMakeFiles/CWServer.dir/src/thread_pool.cpp.o.d"
+  "CMakeFiles/CWServer.dir/src/invertedindex.cpp.o"
+  "CMakeFiles/CWServer.dir/src/invertedindex.cpp.o.d"
+  "CMakeFiles/CWServer.dir/src/threadpool.cpp.o"
+  "CMakeFiles/CWServer.dir/src/threadpool.cpp.o.d"
   "CWServer"
   "CWServer.pdb"
 )

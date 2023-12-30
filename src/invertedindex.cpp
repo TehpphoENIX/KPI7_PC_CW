@@ -1,4 +1,5 @@
-#include <inverted_index.h>
+#include <invertedindex.h>
+
 #include <assert.h>
 
 InvertedIndex::InvertedIndex(const std::size_t initialSize, const float loadFactor) :
