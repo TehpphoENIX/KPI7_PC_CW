@@ -114,26 +114,27 @@ int main(int argc, char** argv)
         bool optParseErr = false;
         while((option = getopt_long(argc, argv, shortopts, longopts, 0)) != -1)
         {
+            char* optargFixed = (optarg[0] == '=')? optarg + 1 : optarg;
             switch (option)
             {
 
             case 'j':
-                threadCount = std::stoi(optarg + 1);
+                threadCount = std::stoi(optargFixed);
                 break;
             case 'i':
-                serverIp = optarg + 1;
+                serverIp = optargFixed;
                 break;
             case 'p':
-                serverPort = optarg + 1;
+                serverPort = optargFixed;
                 break;
             case 'q':
-                serverQueue = std::stoi(optarg + 1);
+                serverQueue = std::stoi(optargFixed);
                 break;
             case 'h':
                 std::cout << help << std::endl;
                 return 0;
             case 'v':
-                std::cout << "version" << std::endl;
+                std::cout << version << std::endl;
                 return 0;
             default:
                 optParseErr = true;

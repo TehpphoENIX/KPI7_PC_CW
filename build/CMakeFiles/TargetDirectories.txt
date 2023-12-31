@@ -28,6 +28,7 @@
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/ContinuousSubmit.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/CWServer.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/CWClient.dir
+/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/CWMultiClient.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/package.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/package_source.dir
 /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles/test.dir

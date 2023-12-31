@@ -24,6 +24,12 @@
   "output": "CMakeFiles/CWClient.dir/exec/CWClient.cpp.o"
 },
 {
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWMultiClient.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWMultiClient.cpp",
+  "output": "CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.o"
+},
+{
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",
   "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CommonCxxTests.dir/CommonCxxTests.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests.cpp",

@@ -537,6 +537,19 @@ CWClient/fast:
 .PHONY : CWClient/fast
 
 #=============================================================================
+# Target rules for targets named CWMultiClient
+
+# Build rule for target.
+CWMultiClient: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CWMultiClient
+.PHONY : CWMultiClient
+
+# fast build rule for target.
+CWMultiClient/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWMultiClient.dir/build.make CMakeFiles/CWMultiClient.dir/build
+.PHONY : CWMultiClient/fast
+
+#=============================================================================
 # Target rules for targets named CommonCxxTests
 
 # Build rule for target.
@@ -572,6 +585,30 @@ exec/CWClient.s: exec/CWClient.cpp.s
 exec/CWClient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/exec/CWClient.cpp.s
 .PHONY : exec/CWClient.cpp.s
+
+exec/CWMultiClient.o: exec/CWMultiClient.cpp.o
+.PHONY : exec/CWMultiClient.o
+
+# target to build an object file
+exec/CWMultiClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWMultiClient.dir/build.make CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.o
+.PHONY : exec/CWMultiClient.cpp.o
+
+exec/CWMultiClient.i: exec/CWMultiClient.cpp.i
+.PHONY : exec/CWMultiClient.i
+
+# target to preprocess a source file
+exec/CWMultiClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWMultiClient.dir/build.make CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.i
+.PHONY : exec/CWMultiClient.cpp.i
+
+exec/CWMultiClient.s: exec/CWMultiClient.cpp.s
+.PHONY : exec/CWMultiClient.s
+
+# target to generate assembly for a file
+exec/CWMultiClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWMultiClient.dir/build.make CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.s
+.PHONY : exec/CWMultiClient.cpp.s
 
 exec/CWServer.o: exec/CWServer.cpp.o
 .PHONY : exec/CWServer.o
@@ -685,11 +722,15 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... CWClient"
+	@echo "... CWMultiClient"
 	@echo "... CWServer"
 	@echo "... CommonCxxTests"
 	@echo "... exec/CWClient.o"
 	@echo "... exec/CWClient.i"
 	@echo "... exec/CWClient.s"
+	@echo "... exec/CWMultiClient.o"
+	@echo "... exec/CWMultiClient.i"
+	@echo "... exec/CWMultiClient.s"
 	@echo "... exec/CWServer.o"
 	@echo "... exec/CWServer.i"
 	@echo "... exec/CWServer.s"
