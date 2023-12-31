@@ -48,17 +48,16 @@ int main(int argc, char** argv)
     bool optParseErr = false;
     while((option = getopt_long(argc, argv, shortopts, longopts, 0)) != -1)
     {
-        char* optargFixed = (optarg[0] == '=')? optarg + 1 : optarg;
         switch (option)
         {
         case 'i':
-            serviceAddr = optargFixed;
+            serviceAddr = (optarg[0] == '=')? optarg + 1 : optarg;
             break;
         case 'p':
-            servicePort = std::stoi(optargFixed);
+            servicePort = std::stoi((optarg[0] == '=')? optarg + 1 : optarg);
             break;
         case 'n':
-            numberOfThreads = std::stoi(optargFixed);
+            numberOfThreads = std::stoi((optarg[0] == '=')? optarg + 1 : optarg);
             break;
         case 'h':
             std::cout << help << std::endl;

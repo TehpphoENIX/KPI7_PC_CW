@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <chrono>
 #include <condition_variable>
 #include <filesystem>
 #include <fstream>
@@ -20,7 +21,7 @@
 #include <threadpool.h>
 #include <signal.h>
 
-const char* shortopts = "hvj:i:p:q:";
+const char* shortopts = "hvj:i:p:q:b";
 const option longopts[] = {
     {"help", no_argument, NULL, 'h'},
     {"version", no_argument, NULL, 'v'},
@@ -28,6 +29,7 @@ const option longopts[] = {
     {"ip", required_argument, NULL, 'i'},
     {"port", required_argument, NULL, 'p'},
     {"queue", required_argument, NULL, 'q'},
+    {"build-only", no_argument, NULL, 'b'},
     {0}
 };
 const std::string version = "0.1.0";
@@ -42,12 +44,14 @@ recieves index search prompt and returns search result.\n\
 options:\n\
 -j, --threads\n\
     ammount of threads to use (4 by default).\n\
--i, --ip\n\
+-i, --ip [ip]\n\
     server ip address (localhost by default).\n\
--p, --port\n\
+-p, --port [portnum]\n\
     server port (3000 by default).\n\
--q, --queue\n\
+-q, --queue [size]\n\
     server queue size (1024 by default).\n\
+-b, --build-only\n\
+    build inverted index and exit.\n\
 -h, --help\n\
     show help and exit.\n\
 -v, --version\n\
@@ -57,6 +61,7 @@ std::string serverIp = "127.0.0.1";
 std::string serverPort = "3000";
 int serverQueue = 1024;
 int threadCount = 4;
+bool buildOnly = false;
 int serverSocket;
 void handleSignal(int signum) 
 {
@@ -114,21 +119,23 @@ int main(int argc, char** argv)
         bool optParseErr = false;
         while((option = getopt_long(argc, argv, shortopts, longopts, 0)) != -1)
         {
-            char* optargFixed = (optarg[0] == '=')? optarg + 1 : optarg;
             switch (option)
             {
 
             case 'j':
-                threadCount = std::stoi(optargFixed);
+                threadCount = std::stoi((optarg[0] == '=')? optarg + 1 : optarg);
                 break;
             case 'i':
-                serverIp = optargFixed;
+                serverIp = (optarg[0] == '=')? optarg + 1 : optarg;
                 break;
             case 'p':
-                serverPort = optargFixed;
+                serverPort = (optarg[0] == '=')? optarg + 1 : optarg;
                 break;
             case 'q':
-                serverQueue = std::stoi(optargFixed);
+                serverQueue = std::stoi((optarg[0] == '=')? optarg + 1 : optarg);
+                break;
+            case 'b':
+                buildOnly = true;
                 break;
             case 'h':
                 std::cout << help << std::endl;
@@ -169,6 +176,7 @@ int main(int argc, char** argv)
 
         //Construction process
         std::cout << "constructing..." << std::endl;
+        auto start = std::chrono::high_resolution_clock::now();
         {
             std::mutex m;
             std::condition_variable finishCondition;
@@ -187,8 +195,10 @@ int main(int argc, char** argv)
             threadPool.unsubscribeOnFinish(subIttPair.first);
         }
         invIn.finish();
-        std::cout << "construction completed\n\n" << std::endl;
-
+        auto end = std::chrono::high_resolution_clock::now();
+        std::cout << "construction completed in " << end - start << "\n" << std::endl;
+        if(buildOnly)
+            return 0;
 
         //Server start
 
