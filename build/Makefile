@@ -524,6 +524,19 @@ CWServer/fast:
 .PHONY : CWServer/fast
 
 #=============================================================================
+# Target rules for targets named CWClient
+
+# Build rule for target.
+CWClient: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CWClient
+.PHONY : CWClient
+
+# fast build rule for target.
+CWClient/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/build
+.PHONY : CWClient/fast
+
+#=============================================================================
 # Target rules for targets named CommonCxxTests
 
 # Build rule for target.
@@ -536,29 +549,53 @@ CommonCxxTests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/build
 .PHONY : CommonCxxTests/fast
 
-exec/main.o: exec/main.cpp.o
-.PHONY : exec/main.o
+exec/CWClient.o: exec/CWClient.cpp.o
+.PHONY : exec/CWClient.o
 
 # target to build an object file
-exec/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.o
-.PHONY : exec/main.cpp.o
+exec/CWClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/exec/CWClient.cpp.o
+.PHONY : exec/CWClient.cpp.o
 
-exec/main.i: exec/main.cpp.i
-.PHONY : exec/main.i
+exec/CWClient.i: exec/CWClient.cpp.i
+.PHONY : exec/CWClient.i
 
 # target to preprocess a source file
-exec/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.i
-.PHONY : exec/main.cpp.i
+exec/CWClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/exec/CWClient.cpp.i
+.PHONY : exec/CWClient.cpp.i
 
-exec/main.s: exec/main.cpp.s
-.PHONY : exec/main.s
+exec/CWClient.s: exec/CWClient.cpp.s
+.PHONY : exec/CWClient.s
 
 # target to generate assembly for a file
-exec/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/main.cpp.s
-.PHONY : exec/main.cpp.s
+exec/CWClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/exec/CWClient.cpp.s
+.PHONY : exec/CWClient.cpp.s
+
+exec/CWServer.o: exec/CWServer.cpp.o
+.PHONY : exec/CWServer.o
+
+# target to build an object file
+exec/CWServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/CWServer.cpp.o
+.PHONY : exec/CWServer.cpp.o
+
+exec/CWServer.i: exec/CWServer.cpp.i
+.PHONY : exec/CWServer.i
+
+# target to preprocess a source file
+exec/CWServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/CWServer.cpp.i
+.PHONY : exec/CWServer.cpp.i
+
+exec/CWServer.s: exec/CWServer.cpp.s
+.PHONY : exec/CWServer.s
+
+# target to generate assembly for a file
+exec/CWServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/exec/CWServer.cpp.s
+.PHONY : exec/CWServer.cpp.s
 
 src/invertedindex.o: src/invertedindex.cpp.o
 .PHONY : src/invertedindex.o
@@ -647,11 +684,15 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
+	@echo "... CWClient"
 	@echo "... CWServer"
 	@echo "... CommonCxxTests"
-	@echo "... exec/main.o"
-	@echo "... exec/main.i"
-	@echo "... exec/main.s"
+	@echo "... exec/CWClient.o"
+	@echo "... exec/CWClient.i"
+	@echo "... exec/CWClient.s"
+	@echo "... exec/CWServer.o"
+	@echo "... exec/CWServer.i"
+	@echo "... exec/CWServer.s"
 	@echo "... src/invertedindex.o"
 	@echo "... src/invertedindex.i"
 	@echo "... src/invertedindex.s"

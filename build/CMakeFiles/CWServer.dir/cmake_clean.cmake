@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CWServer.dir/exec/main.cpp.o"
-  "CMakeFiles/CWServer.dir/exec/main.cpp.o.d"
+  "CMakeFiles/CWServer.dir/exec/CWServer.cpp.o"
+  "CMakeFiles/CWServer.dir/exec/CWServer.cpp.o.d"
   "CMakeFiles/CWServer.dir/src/invertedindex.cpp.o"
   "CMakeFiles/CWServer.dir/src/invertedindex.cpp.o.d"
   "CMakeFiles/CWServer.dir/src/threadpool.cpp.o"

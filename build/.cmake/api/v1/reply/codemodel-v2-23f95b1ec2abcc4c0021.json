@@ -20,7 +20,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						2,
+						1,
 						3,
 						4,
 						5,
@@ -47,7 +47,8 @@
 						26,
 						27,
 						28,
-						29
+						29,
+						30
 					]
 				},
 				{
@@ -62,7 +63,7 @@
 					"source" : "tests",
 					"targetIndexes" : 
 					[
-						1
+						2
 					]
 				}
 			],
@@ -107,7 +108,8 @@
 						26,
 						27,
 						28,
-						29
+						29,
+						30
 					]
 				}
 			],
@@ -115,8 +117,15 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "CWClient::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CWClient-Debug-d5fe848fc81004d7b1cf.json",
+					"name" : "CWClient",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "CWServer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CWServer-Debug-038c3afde46747417d2c.json",
+					"jsonFile" : "target-CWServer-Debug-40f2f65194239cbc34c0.json",
 					"name" : "CWServer",
 					"projectIndex" : 0
 				},

@@ -1,9 +1,9 @@
 [
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
-  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWServer.dir/exec/main.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
-  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp",
-  "output": "CMakeFiles/CWServer.dir/exec/main.cpp.o"
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWServer.dir/exec/CWServer.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp",
+  "output": "CMakeFiles/CWServer.dir/exec/CWServer.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
@@ -16,6 +16,12 @@
   "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWServer.dir/src/threadpool.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
   "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/src/threadpool.cpp",
   "output": "CMakeFiles/CWServer.dir/src/threadpool.cpp.o"
+},
+{
+  "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build",
+  "command": "/usr/bin/g++  -I/home/teh-phoenix/Documents/7/KPI7_PC_CW/include -g -std=gnu++23 -o CMakeFiles/CWClient.dir/exec/CWClient.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWClient.cpp",
+  "file": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWClient.cpp",
+  "output": "CMakeFiles/CWClient.dir/exec/CWClient.cpp.o"
 },
 {
   "directory": "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Linux-g++"
-	BuildStamp="20231230-0925-Experimental"
+	BuildStamp="20231231-1044-Experimental"
 	Name="nobara-pc"
 	Generator="ctest-3.27.7"
 	CompilerName="/usr/bin/g++"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="16877"
 	TotalPhysicalMemory="7866"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="3500"
+	ProcessorClockFrequency="3500.02"
 	>
 	<Testing>
-		<StartDateTime>Dec 30 18:39 EET</StartDateTime>
-		<StartTestTime>1703954385</StartTestTime>
+		<StartDateTime>Dec 31 15:53 EET</StartDateTime>
+		<StartTestTime>1704030828</StartTestTime>
 		<TestList/>
-		<EndDateTime>Dec 30 18:39 EET</EndDateTime>
-		<EndTestTime>1703954385</EndTestTime>
+		<EndDateTime>Dec 31 15:53 EET</EndDateTime>
+		<EndTestTime>1704030828</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

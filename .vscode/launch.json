@@ -11,10 +11,8 @@
             // Resolved by CMake Tools:
             "program": "${command:cmake.launchTargetPath}",
             "args": [
-                "-j=32",
-                "-i=127.0.0.1",
-                "-p 3060",
-                "test_data",
+                "-j=4",
+                "eval_data",
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

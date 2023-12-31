@@ -69,19 +69,19 @@ include CMakeFiles/CWServer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CWServer.dir/flags.make
 
-CMakeFiles/CWServer.dir/exec/main.cpp.o: CMakeFiles/CWServer.dir/flags.make
-CMakeFiles/CWServer.dir/exec/main.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp
-CMakeFiles/CWServer.dir/exec/main.cpp.o: CMakeFiles/CWServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CWServer.dir/exec/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CWServer.dir/exec/main.cpp.o -MF CMakeFiles/CWServer.dir/exec/main.cpp.o.d -o CMakeFiles/CWServer.dir/exec/main.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp
+CMakeFiles/CWServer.dir/exec/CWServer.cpp.o: CMakeFiles/CWServer.dir/flags.make
+CMakeFiles/CWServer.dir/exec/CWServer.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp
+CMakeFiles/CWServer.dir/exec/CWServer.cpp.o: CMakeFiles/CWServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CWServer.dir/exec/CWServer.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CWServer.dir/exec/CWServer.cpp.o -MF CMakeFiles/CWServer.dir/exec/CWServer.cpp.o.d -o CMakeFiles/CWServer.dir/exec/CWServer.cpp.o -c /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp
 
-CMakeFiles/CWServer.dir/exec/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CWServer.dir/exec/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp > CMakeFiles/CWServer.dir/exec/main.cpp.i
+CMakeFiles/CWServer.dir/exec/CWServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CWServer.dir/exec/CWServer.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp > CMakeFiles/CWServer.dir/exec/CWServer.cpp.i
 
-CMakeFiles/CWServer.dir/exec/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CWServer.dir/exec/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/main.cpp -o CMakeFiles/CWServer.dir/exec/main.cpp.s
+CMakeFiles/CWServer.dir/exec/CWServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CWServer.dir/exec/CWServer.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teh-phoenix/Documents/7/KPI7_PC_CW/exec/CWServer.cpp -o CMakeFiles/CWServer.dir/exec/CWServer.cpp.s
 
 CMakeFiles/CWServer.dir/src/invertedindex.cpp.o: CMakeFiles/CWServer.dir/flags.make
 CMakeFiles/CWServer.dir/src/invertedindex.cpp.o: /home/teh-phoenix/Documents/7/KPI7_PC_CW/src/invertedindex.cpp
@@ -113,14 +113,14 @@ CMakeFiles/CWServer.dir/src/threadpool.cpp.s: cmake_force
 
 # Object files for target CWServer
 CWServer_OBJECTS = \
-"CMakeFiles/CWServer.dir/exec/main.cpp.o" \
+"CMakeFiles/CWServer.dir/exec/CWServer.cpp.o" \
 "CMakeFiles/CWServer.dir/src/invertedindex.cpp.o" \
 "CMakeFiles/CWServer.dir/src/threadpool.cpp.o"
 
 # External object files for target CWServer
 CWServer_EXTERNAL_OBJECTS =
 
-CWServer: CMakeFiles/CWServer.dir/exec/main.cpp.o
+CWServer: CMakeFiles/CWServer.dir/exec/CWServer.cpp.o
 CWServer: CMakeFiles/CWServer.dir/src/invertedindex.cpp.o
 CWServer: CMakeFiles/CWServer.dir/src/threadpool.cpp.o
 CWServer: CMakeFiles/CWServer.dir/build.make

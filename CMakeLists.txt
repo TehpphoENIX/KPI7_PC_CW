@@ -13,6 +13,7 @@ set(TIMEOUT 100)
 include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(CWServer "exec/main.cpp" ${SOURCES})
+add_executable(CWServer "exec/CWServer.cpp" ${SOURCES})
+add_executable(CWClient "exec/CWClient.cpp")
 
 add_subdirectory(tests)

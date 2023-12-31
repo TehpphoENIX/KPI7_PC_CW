@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/teh-phoenix/Documents/7/KPI7_PC_CW/build
 
 # The main recursive "all" target.
 all: CMakeFiles/CWServer.dir/all
+all: CMakeFiles/CWClient.dir/all
 all: tests/all
 .PHONY : all
 
@@ -101,6 +102,7 @@ clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
 clean: CMakeFiles/CWServer.dir/clean
+clean: CMakeFiles/CWClient.dir/clean
 clean: tests/clean
 .PHONY : clean
 
@@ -854,7 +856,7 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/CWServer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWServer.dir/build.make CMakeFiles/CWServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=1,2,3,4 "Built target CWServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=3,4,5,6 "Built target CWServer"
 .PHONY : CMakeFiles/CWServer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -874,13 +876,39 @@ CMakeFiles/CWServer.dir/clean:
 .PHONY : CMakeFiles/CWServer.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/CWClient.dir
+
+# All Build rule for target.
+CMakeFiles/CWClient.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=1,2 "Built target CWClient"
+.PHONY : CMakeFiles/CWClient.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CWClient.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CWClient.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles 0
+.PHONY : CMakeFiles/CWClient.dir/rule
+
+# Convenience name for target.
+CWClient: CMakeFiles/CWClient.dir/rule
+.PHONY : CWClient
+
+# clean rule for target.
+CMakeFiles/CWClient.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CWClient.dir/build.make CMakeFiles/CWClient.dir/clean
+.PHONY : CMakeFiles/CWClient.dir/clean
+
+#=============================================================================
 # Target rules for target tests/CMakeFiles/CommonCxxTests.dir
 
 # All Build rule for target.
 tests/CMakeFiles/CommonCxxTests.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/CommonCxxTests.dir/build.make tests/CMakeFiles/CommonCxxTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13 "Built target CommonCxxTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15 "Built target CommonCxxTests"
 .PHONY : tests/CMakeFiles/CommonCxxTests.dir/all
 
 # Build rule for subdir invocation for target.

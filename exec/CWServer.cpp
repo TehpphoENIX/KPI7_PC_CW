@@ -18,8 +18,9 @@
 
 #include <invertedindex.h>
 #include <threadpool.h>
+#include <signal.h>
 
-const char* shortopts = "hj:i:p:q:";
+const char* shortopts = "hvj:i:p:q:";
 const option longopts[] = {
     {"help", no_argument, NULL, 'h'},
     {"version", no_argument, NULL, 'v'},
@@ -56,6 +57,12 @@ std::string serverIp = "127.0.0.1";
 std::string serverPort = "3000";
 int serverQueue = 1024;
 int threadCount = 4;
+int serverSocket;
+void handleSignal(int signum) 
+{
+    close(serverSocket);
+    exit(EXIT_SUCCESS);
+}
 
 const int HandleRegularFile(const std::filesystem::path filePath, InvertedIndex& invIn)
 {
@@ -127,6 +134,7 @@ int main(int argc, char** argv)
                 return 0;
             case 'v':
                 std::cout << "version" << std::endl;
+                return 0;
             default:
                 optParseErr = true;
                 break;
@@ -195,7 +203,7 @@ int main(int argc, char** argv)
             return 1;
         }
 
-        int serverSocket = -1;
+        serverSocket = -1;
         for (addrCurrent = addrList; addrCurrent != NULL; addrCurrent = addrCurrent->ai_next) {
             int  reuse = 1;
 
@@ -226,8 +234,15 @@ int main(int argc, char** argv)
         }
         freeaddrinfo(addrList);
         if (serverSocket == -1) {
-            std::cerr << "Server start failed. No valid address available.";
+            std::cerr << "Server start failed. No valid address available." << std::endl;
             return -1;
+        }
+        else
+        {
+            signal(SIGINT, handleSignal);
+            signal(SIGTERM, handleSignal);
+            signal(SIGHUP, handleSignal);
+            signal(SIGKILL, handleSignal);
         }
         
         std::cout << "Server started on " << serverIp << ':' << serverPort << std::endl;
@@ -244,14 +259,24 @@ int main(int argc, char** argv)
                 port.resize(NI_MAXSERV);
                 getnameinfo(&clientSockAddr, clientSockAddrLen, host.data(), host.length(), port.data(), port.length(), NI_NUMERICSERV | NI_NUMERICHOST);
                 clientId = host + ":" + port;
-                std::stringstream logMessage("<>");
+                std::stringstream logMessage;
+                logMessage << "<" << std::this_thread::get_id() << "> ";
                 logMessage << clientId << " connected\n";
                 std::cout << logMessage.str();
 
                 //get client message
                 std::string buffer(4096, '\0');
-                recv(clientSocket, buffer.data(), buffer.length(), 0);
-                logMessage.str("<>");
+                if (recv(clientSocket, buffer.data(), buffer.length(), 0) == -1)
+                {
+                    logMessage.str("");
+                    logMessage << "<" << std::this_thread::get_id() << "> ";
+                    logMessage << "send error: " << strerror(errno) << "\n";
+                    std::cout << logMessage.str();
+                    return 1;
+                }
+                buffer = buffer.c_str();
+                logMessage.str("");
+                logMessage << "<" << std::this_thread::get_id() << "> ";
                 logMessage << clientId << " sent:\n";
                 logMessage << buffer << "\n";
                 std::cout << logMessage.str();
@@ -286,14 +311,26 @@ int main(int argc, char** argv)
                     }
                 }
                 buffer = std::string();
-                for(auto doc : listOfDocuments)
+                for (auto doc : listOfDocuments)
                 {
                     buffer += doc + '\n';
                 }
+                if(buffer.empty())
+                {
+                    buffer += '\n';
+                }
 
                 //send response
-                send(clientSocket, buffer.c_str(), buffer.size(), 0);
-                logMessage.str("<>");
+                if (send(clientSocket, buffer.c_str(), buffer.size(), 0) == -1)
+                {
+                    logMessage.str("");
+                    logMessage << "<" << std::this_thread::get_id() << "> ";
+                    logMessage << "send error: " << strerror(errno) << "\n";
+                    std::cout << logMessage.str();
+                    return 1;
+                }
+                logMessage.str("");
+                logMessage << "<" << std::this_thread::get_id() << "> ";
                 logMessage << "to " << clientId << ":\n";
                 logMessage << buffer << "\n";
                 std::cout << logMessage.str();
