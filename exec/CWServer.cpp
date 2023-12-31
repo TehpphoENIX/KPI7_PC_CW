@@ -253,91 +253,99 @@ int main(int argc, char** argv)
         int clientSocket = -1;
         while(clientSocket = accept(serverSocket, &clientSockAddr, &clientSockAddrLen))
         {
-            threadPool.addTask({0,[clientSocket, clientSockAddr, clientSockAddrLen, &invIn]-> const int{
-                //get client ip and port
-                std::string host, port, clientId;
-                host.resize(NI_MAXHOST);
-                port.resize(NI_MAXSERV);
-                getnameinfo(&clientSockAddr, clientSockAddrLen, host.data(), host.length(), port.data(), port.length(), NI_NUMERICSERV | NI_NUMERICHOST);
-                clientId = host + ":" + port;
-                std::stringstream logMessage;
-                logMessage << "<" << std::this_thread::get_id() << "> ";
-                logMessage << clientId << " connected\n";
-                std::cout << logMessage.str();
+            if(clientSocket == -1)
+            {
+                std::cerr << "accept error: " << strerror(errno) << std::endl;
+            }
+            else
+            { 
+                threadPool.addTask({0,[clientSocket, clientSockAddr, clientSockAddrLen, &invIn]-> const int{
+                    //get client ip and port
+                    std::string host, port, clientId;
+                    host.resize(NI_MAXHOST);
+                    port.resize(NI_MAXSERV);
+                    getnameinfo(&clientSockAddr, clientSockAddrLen, host.data(), host.length(), port.data(), port.length(), NI_NUMERICSERV | NI_NUMERICHOST);
+                    clientId = host + ":" + port;
+                    std::stringstream logMessage;
+                    logMessage << "<" << std::this_thread::get_id() << "> ";
+                    logMessage << clientId << " connected\n";
+                    std::cout << logMessage.str();
 
-                //get client message
-                std::string buffer(4096, '\0');
-                if (recv(clientSocket, buffer.data(), buffer.length(), 0) == -1)
-                {
+                    //get client message
+                    std::string buffer(4096, '\0');
+                    if (recv(clientSocket, buffer.data(), buffer.length(), 0) == -1)
+                    {
+                        logMessage.str("");
+                        logMessage << "<" << std::this_thread::get_id() << "> ";
+                        logMessage << "send error: " << strerror(errno) << "\n";
+                        std::cout << logMessage.str();
+                        return 1;
+                    }
+                    buffer = buffer.c_str();
                     logMessage.str("");
                     logMessage << "<" << std::this_thread::get_id() << "> ";
-                    logMessage << "send error: " << strerror(errno) << "\n";
+                    logMessage << clientId << " sent:\n";
+                    logMessage << buffer << "\n";
                     std::cout << logMessage.str();
-                    return 1;
-                }
-                buffer = buffer.c_str();
-                logMessage.str("");
-                logMessage << "<" << std::this_thread::get_id() << "> ";
-                logMessage << clientId << " sent:\n";
-                logMessage << buffer << "\n";
-                std::cout << logMessage.str();
 
-                //handle request
-                std::stringstream ss(buffer);
-                std::string word;
-                std::set<std::string> listOfDocuments;
-                bool notFirst = false;
-                while (ss >> word)
-                {
-                    if (invIn.find(word))
+                    //handle request
+                    std::stringstream ss(buffer);
+                    std::string word;
+                    std::set<std::string> listOfDocuments;
+                    bool notFirst = false;
+                    while (ss >> word)
                     {
-                        std::set<std::string> documents = invIn.read(word);
-                        if(notFirst){
-                            std::vector<std::string> toErase;
-                            for (auto doc : listOfDocuments)
-                            {
-                                if(documents.find(doc) == documents.end())
-                                    toErase.push_back(doc);
-                            }
-                            for (auto doc : toErase)
-                            {
-                                listOfDocuments.erase(doc);
-                            }
-                        }
-                        else
+                        if (invIn.find(word))
                         {
-                            listOfDocuments = documents;
-                            notFirst = true;
+                            std::set<std::string> documents = invIn.read(word);
+                            if(notFirst){
+                                std::vector<std::string> toErase;
+                                for (auto doc : listOfDocuments)
+                                {
+                                    if(documents.find(doc) == documents.end())
+                                        toErase.push_back(doc);
+                                }
+                                for (auto doc : toErase)
+                                {
+                                    listOfDocuments.erase(doc);
+                                }
+                            }
+                            else
+                            {
+                                listOfDocuments = documents;
+                                notFirst = true;
+                            }
                         }
                     }
-                }
-                buffer = std::string();
-                for (auto doc : listOfDocuments)
-                {
-                    buffer += doc + '\n';
-                }
-                if(buffer.empty())
-                {
-                    buffer += '\n';
-                }
+                    buffer = std::string();
+                    for (auto doc : listOfDocuments)
+                    {
+                        buffer += doc + '\n';
+                    }
+                    if(buffer.empty())
+                    {
+                        buffer += '\n';
+                    }
 
-                //send response
-                if (send(clientSocket, buffer.c_str(), buffer.size(), 0) == -1)
-                {
+                    //send response
+                    if (send(clientSocket, buffer.c_str(), buffer.size(), 0) == -1)
+                    {
+                        logMessage.str("");
+                        logMessage << "<" << std::this_thread::get_id() << "> ";
+                        logMessage << "send error: " << strerror(errno) << "\n";
+                        std::cout << logMessage.str();
+                        return 1;
+                    }
                     logMessage.str("");
                     logMessage << "<" << std::this_thread::get_id() << "> ";
-                    logMessage << "send error: " << strerror(errno) << "\n";
+                    logMessage << "to " << clientId << ":\n";
+                    logMessage << buffer << "\n";
                     std::cout << logMessage.str();
-                    return 1;
-                }
-                logMessage.str("");
-                logMessage << "<" << std::this_thread::get_id() << "> ";
-                logMessage << "to " << clientId << ":\n";
-                logMessage << buffer << "\n";
-                std::cout << logMessage.str();
 
-                return 0;
-            }});
+                    close(clientSocket);
+                    return 0;
+                }}); 
+            }
         }
     }
     catch(std::exception e)
