@@ -21,14 +21,42 @@
 	TotalVirtualMemory="16877"
 	TotalPhysicalMemory="7866"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="3500.01"
+	ProcessorClockFrequency="3500.08"
 	>
 	<Testing>
-		<StartDateTime>Dec 31 16:33 EET</StartDateTime>
-		<StartTestTime>1704033191</StartTestTime>
-		<TestList/>
-		<EndDateTime>Dec 31 16:33 EET</EndDateTime>
-		<EndTestTime>1704033191</EndTestTime>
+		<StartDateTime>Dec 31 19:04 EET</StartDateTime>
+		<StartTestTime>1704042251</StartTestTime>
+		<TestList>
+			<Test>./tests/threadpool_completion_test</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>threadpool_completion_test</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/threadpool_completion_test</FullName>
+			<FullCommandLine>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "threadpool_completion_test"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.00637</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests "threadpool_completion_test"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Dec 31 19:04 EET</EndDateTime>
+		<EndTestTime>1704042252</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

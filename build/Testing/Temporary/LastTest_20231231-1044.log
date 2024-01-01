@@ -1,3 +1,18 @@
-Start testing: Dec 31 16:33 EET
+Start testing: Dec 31 19:04 EET
 ----------------------------------------------------------
-End testing: Dec 31 16:33 EET
+5/5 Testing: threadpool_completion_test
+5/5 Test: threadpool_completion_test
+Command: "/home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests/CommonCxxTests" "threadpool_completion_test"
+Directory: /home/teh-phoenix/Documents/7/KPI7_PC_CW/build/tests
+"threadpool_completion_test" start time: Dec 31 19:04 EET
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   1.01 sec
+----------------------------------------------------------
+Test Passed.
+"threadpool_completion_test" end time: Dec 31 19:04 EET
+"threadpool_completion_test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Dec 31 19:04 EET
