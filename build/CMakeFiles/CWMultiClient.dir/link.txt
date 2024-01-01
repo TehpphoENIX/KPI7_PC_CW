@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/CWMultiClient.dir/exec/CWMultiClient.cpp.o -o CWMultiClient 

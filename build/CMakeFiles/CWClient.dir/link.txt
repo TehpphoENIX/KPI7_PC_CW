@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/CWClient.dir/exec/CWClient.cpp.o -o CWClient 
