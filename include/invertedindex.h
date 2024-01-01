@@ -19,10 +19,10 @@ private:
     bool finished = false;
 public:
     InvertedIndex(const std::size_t initialSize = defaultInitialSize, const float loadFactor = defaultLoadFactor);
-    virtual void insert(const std::string token, const std::string document);
-    virtual void insertBatch(const std::vector<std::pair<std::string,std::string>>& pairs);
-    virtual bool find(const std::string token);
-    virtual const std::set<std::string>& read(const std::string token);
+    void insert(const std::string token, const std::string document);
+    void insertBatch(const std::vector<std::pair<std::string,std::string>>& pairs);
+    bool find(const std::string token);
+    const std::set<std::string>& read(const std::string token);
     void finish();
 private:
     std::size_t hash(const std::string token);

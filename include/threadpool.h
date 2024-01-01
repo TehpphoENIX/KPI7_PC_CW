@@ -70,7 +70,7 @@ public:
 	void unpause();
 	void pauseToggle();
 
-	void addTask(Task Task);
+	void addTask(Task task);
 	void removeTask();
 
 	//monitoring

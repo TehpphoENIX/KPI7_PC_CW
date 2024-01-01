@@ -92,20 +92,15 @@ const int HandleRegularFile(const std::filesystem::path filePath, InvertedIndex&
     return 0;
 }
 
-const int HandleFile(const std::filesystem::path filePath, ThreadPool& threadPool, InvertedIndex& invIn)
+const int HandleDirectory(const std::filesystem::path filePath, ThreadPool& threadPool, InvertedIndex& invIn)
 {
-    
-    if (std::filesystem::is_directory(filePath))
+    std::filesystem::directory_iterator diritt(filePath);
+    for(auto file : diritt)
     {
-        std::filesystem::directory_iterator diritt(filePath);
-        for(auto file : diritt)
-        {
-            threadPool.addTask({1,std::function<const int()>([file, &threadPool, &invIn] -> const int { return HandleFile(file, threadPool, invIn); })});
-        }
-    }
-    else if (std::filesystem::is_regular_file(filePath))
-    {
-        threadPool.addTask({0,[filePath, &invIn]{ return HandleRegularFile(filePath, invIn); }});
+        if (std::filesystem::is_directory(file))
+            threadPool.addTask({1,[file, &threadPool, &invIn]{ return HandleDirectory(file, threadPool, invIn); }});
+        else if (std::filesystem::is_regular_file(file))
+            threadPool.addTask({0,[file, &invIn]{ return HandleRegularFile(file, invIn); }});
     }
 
     return 0;
@@ -162,6 +157,11 @@ int main(int argc, char** argv)
             {
                 initialFilesList.push_back(argv[i]);
             }
+            else
+            {
+                std::cerr << "File " << argv[i] << " does not exist!" << std::endl;
+                return 1;
+            }
         }
 
         //if empty, add current dir
@@ -187,7 +187,10 @@ int main(int argc, char** argv)
             {
                 for (auto file : initialFilesList)
                 {
-                    threadPool.addTask({1, [file, &threadPool, &invIn]{ return HandleFile(file, threadPool, invIn); }});
+                    if (std::filesystem::is_directory(file))
+                        threadPool.addTask({1,[file, &threadPool, &invIn] -> const int { return HandleDirectory(file, threadPool, invIn); }});
+                    else if (std::filesystem::is_regular_file(file))
+                        threadPool.addTask({0,[file, &invIn] -> const int { return HandleRegularFile(file, invIn); }});
                 }
                 std::unique_lock<std::mutex> lock(m);
                 finishCondition.wait(lock);
