@@ -1,5 +1,6 @@
 #import "template.typ":*
 #import "@preview/codelst:1.0.0": sourcecode
+#import "@preview/cetz:0.1.0"
 
 #let codelst-sourcecode = sourcecode
 #let sourcecode = codelst-sourcecode.with(
@@ -10,6 +11,18 @@ radius: 2pt,
 inset: (x: 10pt, y: 5pt)
 )
 )
+
+#let transpose(in_matrix)={
+  let out_matrix = ()
+  for i in range(0,in_matrix.at(0).len()) {
+      out_matrix.push(())
+      for j in range(0,in_matrix.len()) {
+        out_matrix.at(i).push(in_matrix.at(j).at(i))
+      }
+    }
+
+  return out_matrix
+}
 
 #show: project.with(
   title: [
@@ -355,6 +368,60 @@ inset: (x: 10pt, y: 5pt)
   #figure(
     image("img/Exec1.png"),
     caption: [Виконання програми. Сервер викликається з програми socat та з програми CWClient],
+  )
+
+  #let index_build = csv("tabl/index_build.csv")
+  #for i in range(index_build.len()) {
+    for j in range(1,index_build.at(0).len()) {
+      index_build.at(i).at(j) = float(index_build.at(i).at(j))
+      if i != 0 {
+        index_build.at(i).at(j) /= 1000000000
+      }
+    }
+  }
+  #figure(
+      caption: [Час побудови в залежності від розміру даних для різної кількості потоків (red -- 1, aqua -- 2, green -- 4, blue -- 8, maroon -- 16)],
+      cetz.canvas({
+        import cetz.plot
+        import cetz.draw:*
+
+        plot.plot(
+          size:(9,9),
+          y-tick-step: 0.5, 
+          x-label: "Розмір даних (%)", y-label: "Час виконання (нс)", 
+        {
+          plot.add(transpose(index_build.slice(0,2)).slice(1), 
+            style: (stroke:red))
+          plot.add(transpose((index_build.at(0),)+(index_build.at(2),)).slice(1),   
+            style: (stroke:color.aqua))
+          plot.add(transpose((index_build.at(0),)+(index_build.at(3),)).slice(1),
+            style: (stroke:green))
+          plot.add(transpose((index_build.at(0),)+(index_build.at(4),)).slice(1),     
+            style: (stroke:blue))
+          plot.add(transpose((index_build.at(0),)+(index_build.at(5),)).slice(1), 
+            style: (stroke:maroon))
+        })
+      })
+  )
+  #let index_build2 = csv("tabl/index_build2.csv")
+  #for i in range(index_build2.len()) {
+    index_build2.at(i).at(0) = float(index_build2.at(i).at(0))
+    index_build2.at(i).at(1) = float(index_build2.at(i).at(1))/1000000000
+  }
+  #figure(
+      caption: [Час побудови в залежності від кількості потоків],
+      cetz.canvas({
+        import cetz.plot
+        import cetz.draw:*
+
+        plot.plot(
+          size:(9,9),
+          y-tick-step: 0.5, 
+          x-label: "Кількість Потоків ", y-label: "Час виконання (нс)", 
+        {
+          plot.add(index_build2.slice(1))
+        })
+      })
   )
 ]
 
